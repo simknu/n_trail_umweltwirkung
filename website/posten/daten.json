@@ -4,8 +4,10 @@
     "hero_titel": "Was kommt auf deinen Teller?",
     "hero_bild": "images/hero.png",
     "eaternity_url": "https://eaternity.org",
+    "eaternity_label": "eaternity",
     "footer_copy": "Dialog N & PUNK",
-    "logo": "images/Logo.png",
+    "logo_header": "images/Header_logo.png",
+    "logo_footer": "images/Footer_logo.png",
     "links": {
       "anleitung": "https://n-trail.org/Basel/bs_anleitung.html",
       "faq": "https://n-trail.org/Basel/bs_faq.html",
@@ -25,21 +27,21 @@
     "ebene2_intro": "Kein Problem — vielleicht ist eines davon nah dran?",
     "ebene2_hinweis": "Passt nichts genau? Wähle ein Menu, das ungefähr zu deiner Ernährung passt. Oben siehst du alle Menus, die zur Auswahl stehen.",
     "ebene1": [
-      { "id": "pizza", "typ": "auswahl", "label": "Pizza",
+      { "id": "pizza", "typ": "auswahl", "label": "Pizza", "bild": "images/2_Pizza_Prosciutto.png",
         "frage": "Isst du meistens die Pizza mit Fleisch (Prosciutto) oder ohne Fleisch (Margherita)?",
         "optionen": [
           { "menu_nr": 2, "name": "Pizza Prosciutto", "bild": "images/2_Pizza_Prosciutto.png" },
           { "menu_nr": 1, "name": "Pizza Margherita", "bild": "images/1_Pizza_Margherita.png" }
         ] },
       { "id": "schnitzel", "typ": "single", "menu_nr": 3, "label": "Schnitzel mit Pommes", "bild": "images/3_Schnitzel_Pommes.png" },
-      { "id": "doener", "typ": "auswahl", "label": "Döner / Kebab",
+      { "id": "doener", "typ": "auswahl", "label": "Döner / Kebab", "bild": "images/4_Doener_mit_Fleisch.png",
         "frage": "Isst du meistens den Döner mit Fleisch oder ohne Fleisch (Falafel)?",
         "optionen": [
           { "menu_nr": 4, "name": "Döner mit Fleisch", "bild": "images/4_Doener_mit_Fleisch.png" },
-          { "menu_nr": 5, "name": "Falafel", "bild": "images/5_Falafel.png" }
+          { "menu_nr": 5, "name": "Falafel (Döner ohne Fleisch)", "bild": "images/5_Falafel.png" }
         ] },
       { "id": "aelplermagronen", "typ": "single", "menu_nr": 6, "label": "Älplermagronen", "bild": "images/6_Aelplermagronen.png" },
-      { "id": "spaghetti", "typ": "auswahl", "label": "Spaghetti mit Sauce",
+      { "id": "spaghetti", "typ": "auswahl", "label": "Spaghetti mit Sauce", "bild": "images/7_Spaghetti_Bolognese.png",
         "frage": "Isst du meistens die Spaghetti mit Fleisch (Bolognese) oder ohne Fleisch (Napoli)?",
         "optionen": [
           { "menu_nr": 7, "name": "Spaghetti Bolognese", "bild": "images/7_Spaghetti_Bolognese.png" },
@@ -50,13 +52,13 @@
       { "id": "salat", "typ": "single", "menu_nr": 11, "label": "Gemischter Salat oder Bowl", "bild": "images/11_Gemischter_Salat.png" }
     ],
     "ebene2": [
-      { "id": "waehe", "typ": "auswahl", "label": "Wähe",
+      { "id": "waehe", "typ": "auswahl", "label": "Wähe", "bild": "images/13_Kaese-Zwiebel-Waehe.png",
         "frage": "Welche Wähe isst du meistens: Käse-Zwiebel-Wähe oder Gemüse-Wähe?",
         "optionen": [
           { "menu_nr": 13, "name": "Käse-Zwiebel-Wähe", "bild": "images/13_Kaese-Zwiebel-Waehe.png" },
           { "menu_nr": 12, "name": "Gemüse-Wähe", "bild": "images/12_Gemuesewaehe.png" }
         ] },
-      { "id": "lasagne", "typ": "auswahl", "label": "Lasagne",
+      { "id": "lasagne", "typ": "auswahl", "label": "Lasagne", "bild": "images/14_Lasagne_mit_Fleisch.png",
         "frage": "Isst du meistens die Lasagne mit Fleisch (Hackfleisch) oder ohne Fleisch (vegetarisch)?",
         "optionen": [
           { "menu_nr": 14, "name": "Lasagne mit Hackfleisch", "bild": "images/14_Lasagne_mit_Fleisch.png" },
@@ -66,7 +68,7 @@
       { "id": "roesti", "typ": "single", "menu_nr": 17, "label": "Rösti mit Spiegelei", "bild": "images/17_Roesti_mit_Spiegelei.png" },
       { "id": "padthai", "typ": "single", "menu_nr": 18, "label": "Pad Thai", "bild": "images/18_Pad_Thai.png" },
       { "id": "palak", "typ": "single", "menu_nr": 19, "label": "Palak Paneer", "bild": "images/19_Palak_Paneer.png" },
-      { "id": "pastetli", "typ": "auswahl", "label": "Pastetli mit Reis oder Nudeln",
+      { "id": "pastetli", "typ": "auswahl", "label": "Pastetli mit Reis oder Nudeln", "bild": "images/20_Pastetli_mit_Braetkuegeli.png",
         "frage": "Isst du meistens die Pastetli mit Fleisch (Brätkügeli) oder ohne Fleisch (Pilzsauce)?",
         "optionen": [
           { "menu_nr": 20, "name": "Pastetli mit Brätkügeli", "bild": "images/20_Pastetli_mit_Braetkuegeli.png" },
@@ -78,6 +80,7 @@
   "schritt2": {
     "intro_titel": "Bevor es weitergeht — ein kleines Spiel.",
     "intro_text": "Ordne diese vier Zutaten nach ihrer Klimawirkung. Welches Produkt belastet das Klima deiner Meinung nach am stärksten — und welches am wenigsten?",
+    "intro_hinweis": "Ziehe die Zutaten mit Drag-and-Drop in die richtige Reihenfolge.",
     "achse_oben": "Hohe Belastung fürs Klima",
     "achse_unten": "Geringe Belastung fürs Klima",
     "aufloesen_button": "Auflösen",
@@ -85,15 +88,14 @@
     "einheit": "g CO₂-Äq.",
     "deine_reihenfolge_titel": "Deine Reihenfolge",
     "tatsaechlich_titel": "Tatsächlich (von wenig zu viel)",
-    "referenz_g": 2000,
     "zutaten_start": ["Poulet", "Linsen", "Rindfleisch", "Hartkäse"],
     "zutaten_aufloesung": [
-      { "name": "Linsen",      "wert": 173,   "anzeige": "≈ 170 g CO₂-Äq.",    "balken": 9,   "gekappt": false },
-      { "name": "Hartkäse",    "wert": 1764,  "anzeige": "≈ 1 760 g CO₂-Äq.",  "balken": 88,  "gekappt": false },
-      { "name": "Poulet",      "wert": 1794,  "anzeige": "≈ 1 790 g CO₂-Äq.",  "balken": 90,  "gekappt": false },
-      { "name": "Rindfleisch", "wert": 11333, "anzeige": "≈ 11 300 g CO₂-Äq.", "balken": 100, "gekappt": true }
+      { "name": "Linsen",      "wert": 173,   "anzeige": "≈ 170 g CO₂-Äq." },
+      { "name": "Hartkäse",    "wert": 1764,  "anzeige": "≈ 1 760 g CO₂-Äq." },
+      { "name": "Poulet",      "wert": 1794,  "anzeige": "≈ 1 790 g CO₂-Äq." },
+      { "name": "Rindfleisch", "wert": 11333, "anzeige": "≈ 11 300 g CO₂-Äq." }
     ],
-    "eaternity_hinweis": "Werte: eaternity, normiert auf eine vergleichbare Portion (ca. ein Drittel des Tagesbedarfs). Gerundete Grössenordnungen, keine exakten Messwerte.",
+    "eaternity_hinweis": "Werte: {eaternity}, normiert auf eine vergleichbare Portion (ca. ein Drittel des Energiebedarfs eines Tages). Gerundete Grössenordnungen, keine exakten Messwerte.",
     "texte": {
       "ueberrascht_titel": "Überrascht dich das Ergebnis?",
       "ueberrascht_intro": "Wenn dich das Ergebnis überrascht, bist du damit nicht alleine. Das Ergebnis zeigt vor allem zwei überraschende Dinge:",
@@ -108,20 +110,31 @@
       ],
       "punkt2_titel": "2. Die Käseproduktion ist klimaintensiv.",
       "punkt2_text": "Hartkäse ist klimaintensiv, weil für ein Kilogramm rund 10–13 Liter Milch nötig sind. Die Emissionen der Milchproduktion — vor allem Methan aus der Verdauung der Kühe — summieren sich dadurch stark.",
-      "gute_nachricht": "Die gute Nachricht zum Schluss: Was dem Klima hilft, ist oft auch das, was deiner Gesundheit langfristig guttut. Du tauschst in der Regel nicht das eine gegen das andere.",
+      "gute_nachricht_titel": "Die gute Nachricht zum Schluss: 🌱",
+      "gute_nachricht_text": "Was dem Klima hilft, ist oft auch das, was deiner Gesundheit langfristig guttut. Du tauschst in der Regel nicht das eine gegen das andere.",
       "weiter_button": "Weiter"
     }
   },
 
   "schritt3": {
-    "rahmen_3a_titel": "Zurück zu deinem {gericht}.",
+    "rahmen_3a_titel": "Zurück zu deinem gewählten Menu: {gericht}",
     "rahmen_3a_intro": "Mit einer kleinen Änderung kannst du die Klimawirkung in Zukunft reduzieren.",
-    "vorschlag_hinweis": "Das ist ein Vorschlag fürs nächste Mal. Wenn du das gewählte Menu nicht selber kochst und nicht einzelne Zutaten austauschen kannst, findest du unten weitere emissionsarme Menus zum Ausprobieren.",
-    "reduktion_hinweis": "Die {prozent} % gelten für das hier vorgeschlagene, klimafreundlichste Menu. Kleinere Änderungen (z. B. nur halb so viel Fleisch) reduzieren entsprechend weniger. Wenn du mehr zur Berechnung wissen willst, tippe hier.",
+    "vorschlag_hinweis": [
+      "Das ist ein Vorschlag fürs nächste Mal.",
+      "Wenn du das gewählte Menu nicht selber kochst und nicht einzelne Zutaten austauschen kannst, findest du unten weitere emissionsarme Menus zum Ausprobieren."
+    ],
+    "berechnung_hinweis": "Wenn du mehr zur Berechnung der Werte wissen willst, klicke hier.",
     "berechnung_button": "Wie wird das berechnet?",
-    "berechnung_text": "Die CO₂- und Gesundheitswerte stammen von eaternity, einem Schweizer Fachdienst für Klimabilanzen von Lebensmitteln. Für jedes Menu haben wir eine typische Zutatenliste hinterlegt. Daraus berechnet eaternity, wie viel Treibhausgas vom Anbau bis zum Teller entsteht. Damit grosse und kleine bzw. nahrhafte und weniger nahrhafte Gerichte fair vergleichbar sind, rechnen wir alle Menus auf die gleiche Portionsgrösse um (eine Hauptmahlzeit, etwa ein Drittel des Tagesbedarfs). Die Gesundheitsangaben beruhen auf einem Gesundheitswert (Vita Score), der ebenfalls von eaternity berechnet wird und auf grossen Ernährungs-Gesundheitsstudien beruht. Die Zahlen sind gute Grössenordnungen, keine Messungen auf das Gramm genau, und können je nach Rezept, Herkunft und Saison variieren. Was stabil bleibt: Eine Reduktion von Fleisch und anderen tierischen Produkten (z. B. Käse, Milch, Rahm, Eier) senkt die Klimawirkung der Ernährung stark.",
+    "berechnung_text": [
+      "Die CO₂- und Gesundheitswerte stammen von {eaternity}, einem Schweizer Fachdienst für Klimabilanzen von Lebensmitteln.",
+      "Für jedes Menu haben wir eine typische Zutatenliste hinterlegt. Daraus berechnet {eaternity}, wie viel Treibhausgas vom Anbau bis zum Teller entsteht.",
+      "Damit grosse und kleine bzw. nahrhafte und weniger nahrhafte Gerichte fair vergleichbar sind, rechnen wir alle Menus auf die gleiche Portionsgrösse um (eine Hauptmahlzeit, etwa ein Drittel des Tagesbedarfs).",
+      "Die Gesundheitsangaben beruhen auf einem Gesundheitswert (Vita Score), der ebenfalls von {eaternity} berechnet wird und auf grossen Ernährungs-Gesundheitsstudien beruht.",
+      "Die Zahlen sind gute Grössenordnungen, keine Messungen auf das Gramm genau, und können je nach Rezept, Herkunft und Saison variieren.",
+      "<strong>Was stabil bleibt: Eine Reduktion von Fleisch und anderen tierischen Produkten (z. B. Käse, Milch, Rahm, Eier) senkt die Klimawirkung der Ernährung stark.</strong>"
+    ],
     "rahmen_3b_titel": "Gute Wahl.",
-    "rahmen_3b_text": "Dein {gericht} gehört ohnehin schon zu den emissionsarmen. Hier gibt es nichts zu tauschen. Wenn du magst, findest du unten weitere emissionsarme Menus zum Ausprobieren.",
+    "rahmen_3b_text": "Dein gewähltes Menu ({gericht}) gehört ohnehin schon zu den emissionsarmen. Hier gibt es nichts zu tauschen. Wenn du magst, findest du unten weitere emissionsarme Menus zum Ausprobieren.",
     "emissionsarm_button": "Emissionsarme Menus",
     "emissionsarm_titel": "Emissionsarme Menus zum Ausprobieren",
     "weiter_button": "Weiter",
@@ -130,54 +143,68 @@
       "1":  { "name": "Pizza Margherita", "modus": "bestaetigung" },
       "2":  { "name": "Pizza Prosciutto", "modus": "vorschlag",
               "alternative": { "menu_nr": 1, "name": "Pizza Margherita", "bild": "images/1_Pizza_Margherita.png", "reduktion_prozent": 30,
-                "variantentext": "Bestelle oder backe ab und zu eine vegetarische Pizza. Du hast viele Möglichkeiten: zum Beispiel Pizza verdura, Pizza rucola oder auch Pizza margherita. Damit tust du dem Klima und deiner Gesundheit etwas gutes." } },
+                "variantentext": "Bestelle oder backe ab und zu eine vegetarische Pizza. Du hast viele Möglichkeiten: zum Beispiel Pizza verdura, Pizza rucola oder auch Pizza margherita. Damit tust du dem Klima und deiner Gesundheit etwas Gutes.",
+                "reduktion_satz": "Wenn du <strong>Pizza Margherita</strong> wählst, reduziert sich die Klimawirkung um <strong>30 %</strong> im Vergleich zur Pizza Prosciutto." } },
       "3":  { "name": "Schnitzel mit Pommes", "modus": "vorschlag",
               "alternative": { "menu_nr": 26, "name": "Schnitzel mit Pommes (vegetarisch)", "bild": "images/26_Schnitzel_Vegetarisch.png", "reduktion_prozent": 65,
-                "variantentext": "Ein knuspriges, paniertes Schnitzel mit Pommes. Statt Schweinefleisch ein vegetarisches Schnitzel. Dies ist gut für deine Gesundheit und reduziert die Klimawirkung des Menus." } },
+                "variantentext": "Ein knuspriges, paniertes Schnitzel mit Pommes. Statt Schweinefleisch ein vegetarisches Schnitzel. Dies ist gut für deine Gesundheit und reduziert die Klimawirkung des Menus.",
+                "reduktion_satz": "Wenn du <strong>Schnitzel mit Pommes (vegetarisch)</strong> wählst, reduziert sich die Klimawirkung um <strong>65 %</strong> im Vergleich zum Schnitzel mit Pommes." } },
       "4":  { "name": "Döner mit Fleisch", "modus": "vorschlag",
               "alternative": { "menu_nr": 5, "name": "Falafel (Döner ohne Fleisch)", "bild": "images/5_Falafel.png", "reduktion_prozent": 90,
-                "variantentext": "Du kannst ab und zu statt eines Döners mit Fleisch einen Falafel nehmen.<br> Wenn du nicht auf Fleisch verzichten möchtest, gibt es vielleicht einen Poulet-Döner im Angebot. Dieser ist deutlich klimafreundlicher als der Döner mit Rindfleisch." } },
-      "5":  { "name": "Falafel", "modus": "bestaetigung" },
+                "variantentext": "Du kannst ab und zu statt eines Döners mit Fleisch einen Falafel nehmen.<br>Wenn du nicht auf Fleisch verzichten möchtest, gibt es vielleicht einen Poulet-Döner im Angebot. Dieser ist deutlich klimafreundlicher als der Döner mit Rindfleisch.",
+                "reduktion_satz": "Wenn du <strong>Falafel (Döner ohne Fleisch)</strong> wählst, reduziert sich die Klimawirkung um <strong>90 %</strong> im Vergleich zum Döner mit Fleisch. Kleinere Änderungen (z. B. ein Poulet- statt Rindfleisch-Döner) reduzieren die Klimawirkung entsprechend weniger." } },
+      "5":  { "name": "Falafel (Döner ohne Fleisch)", "modus": "bestaetigung" },
       "6":  { "name": "Älplermagronen", "modus": "vorschlag",
               "alternative": { "menu_nr": 28, "name": "Älplermagronen (Haferrahm, wenig Käse)", "bild": "images/28_Aelplermagronen_wenig_Kaese.png", "reduktion_prozent": 30,
-                "variantentext": "Hier kannst du experimentieren. Versuche es mal mit weniger Käse und Haferrahm statt Vollrahm. Oder probiere mal, ob dir ein veganes Rezept auch schmeckt. Je weniger Käse und Rahm, desto kleiner die Klimawirkung." } },
+                "variantentext": "Hier kannst du experimentieren. Versuche es mal mit weniger Käse und Haferrahm statt Vollrahm. Oder probiere mal, ob dir ein veganes Rezept auch schmeckt. Je weniger Käse und Rahm, desto kleiner die Klimawirkung.",
+                "reduktion_satz": "Wenn du <strong>Älplermagronen (Haferrahm, wenig Käse)</strong> wählst, reduziert sich die Klimawirkung um <strong>30 %</strong> im Vergleich zu den Älplermagronen. Kleinere Änderungen (z. B. Haferrahm statt Vollrahm, aber gleich viel Käse) reduzieren die Klimawirkung entsprechend weniger." } },
       "7":  { "name": "Spaghetti Bolognese", "modus": "vorschlag",
               "alternative": { "menu_nr": 30, "name": "Spaghetti mit Linsenbolognese", "bild": "images/30_Spaghetti_mit_Linsenbolognese.png", "reduktion_prozent": 65,
-                "variantentext": "Probier mal eine Linsenbolognese. Schmeckt fast identisch und hat mehr Ballaststoffe, was gut für deine Gesundheit ist.<br>Wenn du nicht ganz auf Fleisch verzichten möchtest, kannst du auch eine Sauce mit halb Hackfleisch, halb Linsen ausprobieren." } },
+                "variantentext": "Probier mal eine Linsenbolognese. Schmeckt fast identisch und hat mehr Ballaststoffe, was gut für deine Gesundheit ist.<br>Wenn du nicht ganz auf Fleisch verzichten möchtest, kannst du auch eine Sauce mit halb Hackfleisch, halb Linsen ausprobieren.",
+                "reduktion_satz": "Wenn du <strong>Spaghetti mit Linsenbolognese</strong> wählst, reduziert sich die Klimawirkung um <strong>65 %</strong> im Vergleich zu den Spaghetti Bolognese. Kleinere Änderungen (z. B. eine Sauce mit halb Hackfleisch, halb Linsen) reduzieren die Klimawirkung entsprechend weniger." } },
       "8":  { "name": "Spaghetti Napoli", "modus": "bestaetigung" },
       "9":  { "name": "Rahmschnitzel mit Reis oder Nudeln", "modus": "vorschlag",
               "alternative": { "menu_nr": 22, "name": "Rahmschnitzel (vegetarisch)", "bild": "images/22_Rahmschnitzel_Vegetarisch.png", "reduktion_prozent": 90,
-                "variantentext": "Fast dasselbe Gericht, einfach ein vegetarisches Schnitzel anstelle des Kalbsschnitzels. Dies ist auch gut für deine Gesundheit.<br>Wenn du nicht auf Fleisch verzichten möchtest, kannst du das Kalbs- mit einem Pouletschnitzel ersetzen." } },
+                "variantentext": "Fast dasselbe Gericht, einfach ein vegetarisches Schnitzel anstelle des Kalbsschnitzels. Dies ist auch gut für deine Gesundheit.<br>Wenn du nicht auf Fleisch verzichten möchtest, kannst du das Kalbs- mit einem Pouletschnitzel ersetzen.",
+                "reduktion_satz": "Wenn du <strong>Rahmschnitzel (vegetarisch)</strong> wählst, reduziert sich die Klimawirkung um <strong>90 %</strong> im Vergleich zum Rahmschnitzel mit Reis oder Nudeln. Kleinere Änderungen (z. B. ein Poulet- statt Kalbsschnitzel) reduzieren die Klimawirkung entsprechend weniger." } },
       "10": { "name": "Butter Chicken mit Reis", "modus": "vorschlag",
               "alternative": { "menu_nr": 25, "name": "Butter Tofu", "bild": "images/25_Butter_Tofu.png", "reduktion_prozent": 50,
-                "variantentext": "Probier einmal Butter Tofu - dieselbe Sauce, die selben Gewürze, einfach Tofu statt Huhn. Dies reduziert die Klimawirkung des Menus merklich." } },
+                "variantentext": "Probier einmal Butter Tofu - dieselbe Sauce, die selben Gewürze, einfach Tofu statt Huhn. Dies reduziert die Klimawirkung des Menus merklich.",
+                "reduktion_satz": "Wenn du <strong>Butter Tofu</strong> wählst, reduziert sich die Klimawirkung um <strong>50 %</strong> im Vergleich zum Butter Chicken mit Reis." } },
       "11": { "name": "Gemischter Salat", "modus": "bestaetigung" },
       "12": { "name": "Gemüse-Wähe", "modus": "bestaetigung" },
       "13": { "name": "Käse-Zwiebel-Wähe", "modus": "vorschlag",
               "alternative": { "menu_nr": 12, "name": "Gemüse-Wähe", "bild": "images/12_Gemuesewaehe.png", "reduktion_prozent": 20,
-                "variantentext": "Alternativ könntest du eine Gemüse-Wähe ausprobieren. Diese hat weniger Käse und Rahm und wird dadurch leichter und auch klimafreundlicher." } },
+                "variantentext": "Alternativ könntest du eine Gemüse-Wähe ausprobieren. Diese hat weniger Käse und Rahm, wird dadurch leichter und auch klimafreundlicher.",
+                "reduktion_satz": "Wenn du <strong>Gemüse-Wähe</strong> wählst, reduziert sich die Klimawirkung um <strong>20 %</strong> im Vergleich zur Käse-Zwiebel-Wähe." } },
       "14": { "name": "Lasagne mit Fleisch", "modus": "vorschlag",
               "alternative": { "menu_nr": 15, "name": "Vegetarische Lasagne", "bild": "images/15_Vegetarische_Lasagne.png", "reduktion_prozent": 50,
-                "variantentext": "Probier mal eine Lasagne mit Linsen statt Hackfleisch. Schmeckt fast identisch und hat mehr Ballaststoffe, was gut für deine Gesundheit ist.<br>Wenn du nicht ganz auf Fleisch verzichten möchtest, kannst du auch eine Sauce mit halb Hackfleisch, halb Linsen ausprobieren." } },
+                "variantentext": "Probier mal eine Lasagne mit Linsen statt Hackfleisch. Schmeckt fast identisch und hat mehr Ballaststoffe, was gut für deine Gesundheit ist.<br>Wenn du nicht ganz auf Fleisch verzichten möchtest, kannst du auch eine Sauce mit halb Hackfleisch, halb Linsen ausprobieren.",
+                "reduktion_satz": "Wenn du <strong>Vegetarische Lasagne</strong> wählst, reduziert sich die Klimawirkung um <strong>50 %</strong> im Vergleich zur Lasagne mit Fleisch. Kleinere Änderungen (z. B. eine Sauce mit halb Hackfleisch, halb Linsen) reduzieren die Klimawirkung entsprechend weniger." } },
       "15": { "name": "Vegetarische Lasagne", "modus": "bestaetigung" },
       "16": { "name": "Sushi", "modus": "vorschlag",
               "alternative": { "menu_nr": 29, "name": "Sushi (vegetarisch)", "bild": "images/29_Sushi_Vegetarisch.png", "reduktion_prozent": 30,
-                "variantentext": "Probier mal ein Sushi ohne Fisch. Ein rein vegetarisches Sushi hat eine kleinere Klimawirkung. Gesund sind beide Varianten." } },
+                "variantentext": "Probier mal ein Sushi ohne Fisch. Ein rein vegetarisches Sushi hat eine kleinere Klimawirkung. Gesund sind beide Varianten.",
+                "reduktion_satz": "Wenn du <strong>Sushi (vegetarisch)</strong> wählst, reduziert sich die Klimawirkung um <strong>30 %</strong> im Vergleich zum Sushi." } },
       "17": { "name": "Rösti mit Spiegelei", "modus": "bestaetigung" },
       "18": { "name": "Pad Thai", "modus": "vorschlag",
               "alternative": { "menu_nr": 23, "name": "Pad Thai (vegetarisch)", "bild": "images/23_Pad_Thai_Vegetarisch.png", "reduktion_prozent": 70,
-                "variantentext": "Probiere mal ein Pad Thai mit Tofu und Ei, anstatt Crevetten und Poulet. Dies reduziert die Klimawirkung des Menus stark." } },
+                "variantentext": "Probiere mal ein Pad Thai mit Tofu und Ei, anstatt Crevetten und Poulet. Dies reduziert die Klimawirkung des Menus stark.",
+                "reduktion_satz": "Wenn du <strong>Pad Thai (vegetarisch)</strong> wählst, reduziert sich die Klimawirkung um <strong>70 %</strong> im Vergleich zum Pad Thai." } },
       "19": { "name": "Palak Paneer", "modus": "vorschlag",
               "alternative": { "menu_nr": 24, "name": "Palak Tofu", "bild": "images/24_Palak_Tofu.png", "reduktion_prozent": 65,
-                "variantentext": "Spinat, Joghurt und Gemüse bleiben gleich, nur der Paneer wird durch Tofu ersetzt. Durch diese kleine Änderung kannst du die Klimawirkung des Menus spürbar verkleinern." } },
-      "20": { "name": "Pastetli mit Brätkügeli", "modus": "vorschlag",
+                "variantentext": "Spinat, Joghurt und Gemüse bleiben gleich, nur der Paneer wird durch Tofu ersetzt. Durch diese kleine Änderung kannst du die Klimawirkung des Menus spürbar verkleinern.",
+                "reduktion_satz": "Wenn du <strong>Palak Tofu</strong> wählst, reduziert sich die Klimawirkung um <strong>65 %</strong> im Vergleich zum Palak Paneer." } },
+      "20": { "name": "Pastetli mit Fleisch", "modus": "vorschlag",
               "alternative": { "menu_nr": 21, "name": "Pastetli ohne Fleisch", "bild": "images/21_Pastetli_mit_Pilzsauce.png", "reduktion_prozent": 50,
-                "variantentext": "Probier mal eine Pastetli-Sauce ohne Fleisch. Es gibt auch Rezepte ohne Pilze, wenn du diese nicht magst.<br>Wenn du nicht ganz auf Fleisch verzichten magst, nimm ein Poulet-Ragout statt Brätkügeli. Dies hilft deiner Gesundheit und dem Klima." } },
-      "21": { "name": "Pastetli mit Pilzsauce", "modus": "bestaetigung" }
+                "variantentext": "Probier mal eine Pastetli-Sauce ohne Fleisch. Es gibt auch Rezepte ohne Pilze, wenn du diese nicht magst.<br>Wenn du nicht ganz auf Fleisch verzichten magst, nimm ein Poulet-Ragout statt Brätkügeli. Dies hilft deiner Gesundheit und dem Klima.",
+                "reduktion_satz": "Wenn du <strong>Pastetli ohne Fleisch</strong> wählst, reduziert sich die Klimawirkung um <strong>50 %</strong> im Vergleich zum Pastetli mit Fleisch. Kleinere Änderungen (z. B. ein Poulet-Ragout statt Brätkügeli) reduzieren die Klimawirkung entsprechend weniger." } },
+      "21": { "name": "Pastetli ohne Fleisch", "modus": "bestaetigung" }
     },
 
+    "emissionsarm_anzahl": 5,
     "emissionsarm_pool": [
-      { "menu_nr": 5,  "name": "Falafel",                        "bild": "images/5_Falafel.png",                        "herkunft": "orientalisch" },
+      { "menu_nr": 5,  "name": "Falafel (Döner ohne Fleisch)",   "bild": "images/5_Falafel.png",                        "herkunft": "orientalisch" },
       { "menu_nr": 8,  "name": "Spaghetti Napoli",               "bild": "images/8_Spaghetti_Napoli.png",               "herkunft": "italienisch" },
       { "menu_nr": 30, "name": "Spaghetti mit Linsenbolognese",  "bild": "images/30_Spaghetti_mit_Linsenbolognese.png", "herkunft": "italienisch" },
       { "menu_nr": 23, "name": "Pad Thai (vegetarisch)",         "bild": "images/23_Pad_Thai_Vegetarisch.png",          "herkunft": "thailändisch" },
@@ -190,43 +217,40 @@
   },
 
   "schritt4": {
-    "frage": "Willst du es in den nächsten zwei Wochen einmal ausprobieren?",
+    "frage": "Willst du es beim nächsten passenden Moment einmal ausprobieren?",
     "ja_button": "Ja, einmal ausprobieren",
     "ueberspringen_button": "Überspringen",
     "plan_intro": "Ein kleiner Plan, der erfahrungsgemäss hilft: Nimm dir einen konkreten Moment vor.",
     "plan_vorlage": "Wenn ich das nächste Mal {ausloeser}, dann {handlung}",
     "ausloeser_titel": "Wenn ich das nächste Mal …",
+    "klima_menu_platzhalter": "[Klima-Menu]",
     "ausloeser": [
-      "… Essen nach Hause bestelle",
-      "… ein Abendessen koche",
-      "… in der Mensa zu Mittag esse",
-      "… auf dem Weg nach Hause einkaufe",
-      "… am Samstag einkaufe"
+      { "label": "… Essen nach Hause bestelle", "handlung": "… wähle ich ein vegetarisches oder veganes Menu. Zum Beispiel [Klima-Menu].", "braucht_menu": true },
+      { "label": "… ein Abendessen koche",      "handlung": "… koche ich ein vegetarisches oder veganes Menu. Zum Beispiel [Klima-Menu].", "braucht_menu": true },
+      { "label": "… in der Mensa zu Mittag esse", "handlung": "… wähle ich die vegetarische oder vegane Option.", "braucht_menu": false },
+      { "label": "… einkaufen gehe",            "handlung": "… kaufe ich Zutaten für ein vegetarisches oder veganes Menu. Zum Beispiel [Klima-Menu].", "braucht_menu": true }
     ],
-    "zu_deinem_gericht": "Zu deinem {gericht}:",
-    "erinnerung_frage": "Möchtest du dir dafür eine Erinnerung einrichten?",
-    "erinnerung_hinweis": "Wir speichern nichts. Die Erinnerung geht nur an dich, in deinen persönlichen Kalender.",
-    "erinnerung_datum_label": "Wann sollen wir dich erinnern?",
-    "erinnerung_ja_button": "Erinnerung herunterladen",
-    "erinnerung_ueberspringen_button": "Überspringen",
-    "erinnerung_fallback": "Funktioniert das nicht? Füge dir die Erinnerung selbst im Kalender hinzu.",
-    "ics_titel_vorlage": "Vorsatz: {handlung}",
-    "fertig_button": "Fertig",
-    "handlung": {
-      "2":  "… bestelle/backe ich eine vegetarische Pizza (z. B. Margherita oder Verdura).",
-      "3":  "… nehme ich ein vegetarisches Schnitzel statt Fleisch.",
-      "4":  "… nehme ich einen Falafel- statt einen Fleisch-Döner.",
-      "6":  "… koche ich sie mit weniger Käse und Haferrahm statt Vollrahm.",
-      "7":  "… mache ich die Bolognese mit Linsen (ganz oder halb/halb).",
-      "9":  "… nehme ich ein vegetarisches oder Poulet- statt Kalbsschnitzel.",
-      "10": "… nehme ich Butter Tofu statt Butter Chicken.",
-      "13": "… nehme ich eine Gemüse-Wähe statt der Käse-Zwiebel-Wähe.",
-      "14": "… mache ich die Lasagne mit Linsen statt Hackfleisch.",
-      "16": "… bestelle ich vegetarische Sushi.",
-      "18": "… nehme ich Pad Thai mit Tofu und Ei statt Poulet und Crevetten.",
-      "19": "… nehme ich Palak Tofu statt Palak Paneer.",
-      "20": "… nehme ich Pastetli mit einer Sauce ohne Fleisch."
-    }
+    "zu_deinem_gericht": "Zu deinem gewählten Menu ({gericht}):",
+    "erinnerung": {
+      "frage": "Möchtest du dir dafür eine Erinnerung einrichten?",
+      "hinweis": "Wir speichern nichts. Die Erinnerung geht nur an dich, in deinen persönlichen Kalender.",
+      "datum_label": "Wann sollen wir dich erinnern?",
+      "vorschau_titel": "So sieht deine Erinnerung aus:",
+      "vorschau_hinweis": "Du kannst den Text kopieren und die Erinnerung selbst in deinen Kalender eintragen.",
+      "kopieren_button": "Text kopieren",
+      "kopiert_hinweis": "Text kopiert.",
+      "kopieren_fehler": "Kopieren hat nicht geklappt — markiere den Text und kopiere ihn von Hand.",
+      "ja_button": "Erinnerung herunterladen",
+      "fallback": "Funktioniert das nicht? Füge dir die Erinnerung selbst im Kalender hinzu.",
+      "termin_label": "Termin",
+      "ics_titel": "Mein Klima-Vorsatz",
+      "ics_zusatz": "Ein kleiner Schritt — gut fürs Klima und oft auch für deine Gesundheit.",
+      "ics_menu_zeile": "Vorgeschlagenes Menu: {menu}",
+      "default_tage": 7,
+      "default_stunde": 18,
+      "dauer_minuten": 15
+    },
+    "weiter_button": "Weiter"
   },
 
   "schritt5": {
@@ -234,6 +258,8 @@
       "Wenn du eine Sache ändern möchtest: Verzichte hin und wieder auf Fleisch.",
       "Wenn du dich bereits vegetarisch ernährst, probier auch einmal die vegane Option.",
       "Das ist der Tausch mit dem grössten Effekt — fürs Klima und oft auch für deine Gesundheit."
-    ]
+    ],
+    "weiter_button": "Weiter",
+    "weiter_link": "https://n-trail.org/Basel/naechster-posten.html"
   }
 }

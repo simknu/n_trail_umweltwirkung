@@ -10,7 +10,7 @@
 
   <!-- === header: white bar · logo=Home · hamburger→dropdown (kein Info-Button) === -->
   <header class="hdr">
-    <a class="hdr-logo" href="index.html"><img id="hdrLogo" src="images/Logo.png" alt="N-Trail — Home"></a>
+    <a class="hdr-logo" href="index.html"><img id="hdrLogo" src="images/Header_logo.png" alt="N-Trail — Home"></a>
     <nav class="hdr-menu">
       <button class="hdr-burger" aria-expanded="false" aria-controls="menu"><span class="sr-only">Menü</span></button>
       <ul id="menu" class="menu" hidden>
@@ -21,7 +21,7 @@
     </nav>
   </header>
 
-  <!-- === hero: full-bleed + overlaid title === -->
+  <!-- === hero: full-bleed + overlaid Haupttitel (kein Scrim, kein grauer Balken) === -->
   <div class="hero">
     <img id="heroImg" src="images/hero.png" alt="">
     <h1 class="hero-title" id="heroTitle">Was kommt auf deinen Teller?</h1>
@@ -31,22 +31,22 @@
 
     <!-- ========== Schritt 1 – Persönlicher Anker ========== -->
     <section class="step" data-step="1" aria-label="Schritt 1">
-      <p class="lead" id="s1Intro"></p>
+      <p id="s1Intro"></p>
       <h2 id="s1FrageGross"></h2>
-      <p id="s1FrageKlein" class="subline"></p>
+      <p id="s1FrageKlein"></p>
 
-      <div id="s1Ebene1" class="tiles"></div>
+      <div id="s1Ebene1" class="menulist"></div>
 
       <button class="btn btn-secondary" id="s1MehrBtn" type="button"></button>
 
       <div id="s1Ebene2Wrap" hidden>
         <h2 id="s1Ebene2Intro"></h2>
-        <div id="s1Ebene2" class="tiles"></div>
-        <p class="hint" id="s1Ebene2Hinweis"></p>
+        <div id="s1Ebene2" class="menulist"></div>
+        <p id="s1Ebene2Hinweis"></p>
       </div>
 
-      <p class="hint" id="s1Hinweis"></p>
-      <p class="hint anon" id="s1Anon"></p>
+      <p id="s1Hinweis"></p>
+      <p id="s1Anon"></p>
     </section>
 
     <!-- ========== Schritt 2 – Schätzen, dann auflösen ========== -->
@@ -55,13 +55,14 @@
       <div id="s2a">
         <h2 id="s2Titel"></h2>
         <p id="s2Text"></p>
+        <p id="s2DragHinweis"></p>
 
         <p class="axis axis-top" id="s2AxisTop"></p>
         <ul id="sortlist" class="sortlist" aria-label="Zutaten ordnen"></ul>
         <p class="axis axis-bottom" id="s2AxisBottom"></p>
 
         <button class="btn btn-primary" id="s2AufloesenBtn" type="button"></button>
-        <p class="hint" id="s2AufloesenHinweis"></p>
+        <p id="s2AufloesenHinweis"></p>
       </div>
 
       <!-- 2b: Auflösung -->
@@ -71,7 +72,7 @@
 
         <h2 id="s2TatTitel"></h2>
         <div id="s2Bars" class="bars"></div>
-        <p class="hint" id="s2EaternityHinweis"></p>
+        <p id="s2EaternityHinweis"></p>
 
         <h2 id="s2UeTitel"></h2>
         <p id="s2UeIntro"></p>
@@ -108,12 +109,9 @@
           </figcaption>
         </figure>
 
-        <p id="s3aVorschlagHinweis" class="muted"></p>
-        <p id="s3aReduktionHinweis" class="hint"></p>
-        <button class="btn btn-link" id="s3aBerechnungBtn" type="button"></button>
-        <div id="s3aBerechnungWrap" class="reveal" hidden>
-          <p id="s3aBerechnungText"></p>
-        </div>
+        <p class="reduktion" id="s3aReduktionSatz"></p>
+
+        <div id="s3aVorschlagHinweis"></div>
       </div>
 
       <!-- 3b: Bestätigung -->
@@ -122,12 +120,20 @@
         <p id="s3bText"></p>
       </div>
 
-      <!-- gemeinsam: Emissionsarme Menus + Weiter -->
+      <!-- gemeinsam: Emissionsarme Menus -->
       <button class="btn btn-secondary" id="s3EmissionsarmBtn" type="button"></button>
       <div id="s3EmissionsarmWrap" hidden>
         <h3 id="s3EmissionsarmTitel"></h3>
-        <div id="s3EmissionsarmListe" class="tiles"></div>
+        <div id="s3EmissionsarmListe" class="menulist menulist--static"></div>
       </div>
+
+      <!-- Berechnungs-Hinweis (nur 3a) + Weiter -->
+      <div id="s3aBerechnung" hidden>
+        <p id="s3aBerechnungHinweis"></p>
+        <button class="btn btn-link" id="s3aBerechnungBtn" type="button"></button>
+        <div id="s3aBerechnungWrap" class="reveal" hidden></div>
+      </div>
+
       <button class="btn btn-primary" id="s3WeiterBtn" type="button"></button>
     </section>
 
@@ -149,32 +155,41 @@
 
         <p class="plansatz" id="s4PlanSatz" hidden></p>
 
-        <figure class="menu-card" id="s4AltCard" hidden>
-          <img id="s4AltBild" src="" alt="">
-          <figcaption><span id="s4ZuDeinem" class="muted"></span> <strong id="s4AltName"></strong></figcaption>
-        </figure>
+        <div id="s4AltWrap" hidden>
+          <p class="plan-label" id="s4ZuDeinem"></p>
+          <div id="s4AltListe" class="menulist menulist--static"></div>
+        </div>
 
         <div class="reminder">
           <h3 id="s4ErinnerungFrage"></h3>
-          <p class="hint" id="s4ErinnerungHinweis"></p>
+          <p id="s4ErinnerungHinweis"></p>
           <label class="date-label" id="s4DatumLabel" for="s4Datum"></label>
           <input type="datetime-local" id="s4Datum" class="date-input">
+
+          <h3 id="s4VorschauTitel"></h3>
+          <p id="s4VorschauHinweis"></p>
+          <pre class="ics-preview" id="s4Vorschau" tabindex="0"></pre>
+          <button class="btn btn-secondary" id="s4KopierenBtn" type="button"></button>
+          <p id="s4KopierStatus" role="status" hidden></p>
+
           <button class="btn btn-secondary" id="s4ErinnerungJaBtn" type="button"></button>
-          <p class="hint fallback" id="s4ErinnerungFallback"></p>
+          <p id="s4ErinnerungFallback"></p>
         </div>
 
-        <button class="btn btn-primary" id="s4FertigBtn" type="button"></button>
+        <button class="btn btn-primary" id="s4WeiterBtn" type="button"></button>
       </div>
     </section>
 
     <!-- ========== Schritt 5 – Satz zum Mitnehmen ========== -->
     <section class="step" data-step="5" aria-label="Schritt 5">
       <div id="s5Kernsatz" class="kernsatz"></div>
+      <!-- Platzhalter-Link: endgültige Weiterleitung wird nachgeliefert (daten.json → schritt5.weiter_link) -->
+      <a class="btn btn-primary" id="s5WeiterBtn" href="#"></a>
     </section>
 
   </main>
 
-  <!-- === footer: grey panel · legal links · copyright · logo=Home === -->
+  <!-- === footer: grey panel · legal links · copyright · logo=Home (kein grauer Balken oben) === -->
   <footer class="ftr">
     <div class="ftr-inner">
       <div class="ftr-text">
@@ -185,7 +200,7 @@
         <p class="ftr-copy">© <span id="year">2026</span> <span id="ftrCopy"></span></p>
       </div>
       <a class="ftr-logo" href="index.html" aria-label="N-Trail — Home">
-        <img id="ftrLogo" src="images/Logo.png" alt="N-Trail">
+        <img id="ftrLogo" src="images/Footer_logo.png" alt="N-Trail">
       </a>
     </div>
   </footer>
