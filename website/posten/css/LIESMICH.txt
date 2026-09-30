@@ -1,0 +1,20 @@
+Schriften (Self-Hosting)
+========================
+
+Lege die folgenden Schrift-Dateien in diesen Ordner (css/):
+
+  Lato-Regular.woff2   (Lato, Gewicht 400)
+  Lato-Regular.woff    (Fallback für ältere Browser)
+  Lato-Black.woff2     (Lato, Gewicht 900 — Titel, Buttons, Menü)
+  Lato-Black.woff      (Fallback)
+
+Die @font-face-Regeln stehen bereits oben in ../style.css und greifen
+automatisch, sobald die Dateien hier liegen. Bis dahin nutzt die Seite
+die System-Schrift aus dem Fallback-Stack (kein Fehler, nur ein anderer Look).
+
+Bezugsquelle: Lato ist unter der SIL Open Font License frei verfügbar
+(z. B. Google Fonts → "Download family"). Die .ttf danach in .woff2/.woff
+umwandeln (z. B. mit einem woff2-Konverter) und hier ablegen.
+
+Fira Sans wird NICHT benötigt (war nur für den Info-Button gedacht, der
+in diesem Posten entfällt).

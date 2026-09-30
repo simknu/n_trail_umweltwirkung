@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no,viewport-fit=cover">
+  <title>Was kommt auf deinen Teller?</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- === header: white bar · logo=Home · hamburger→dropdown (kein Info-Button) === -->
+  <header class="hdr">
+    <a class="hdr-logo" href="index.html"><img id="hdrLogo" src="images/Logo.png" alt="N-Trail — Home"></a>
+    <nav class="hdr-menu">
+      <button class="hdr-burger" aria-expanded="false" aria-controls="menu"><span class="sr-only">Menü</span></button>
+      <ul id="menu" class="menu" hidden>
+        <li><a id="lnkAnleitung" href="#">Anleitung</a></li>
+        <li><a id="lnkFaq" href="#">FAQ</a></li>
+        <li><a id="lnkKarte" href="#">Karte</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- === hero: full-bleed + overlaid title === -->
+  <div class="hero">
+    <img id="heroImg" src="images/hero.png" alt="">
+    <h1 class="hero-title" id="heroTitle">Was kommt auf deinen Teller?</h1>
+  </div>
+
+  <main class="container">
+
+    <!-- ========== Schritt 1 – Persönlicher Anker ========== -->
+    <section class="step" data-step="1" aria-label="Schritt 1">
+      <p class="lead" id="s1Intro"></p>
+      <h2 id="s1FrageGross"></h2>
+      <p id="s1FrageKlein" class="subline"></p>
+
+      <div id="s1Ebene1" class="tiles"></div>
+
+      <button class="btn btn-secondary" id="s1MehrBtn" type="button"></button>
+
+      <div id="s1Ebene2Wrap" hidden>
+        <h2 id="s1Ebene2Intro"></h2>
+        <div id="s1Ebene2" class="tiles"></div>
+        <p class="hint" id="s1Ebene2Hinweis"></p>
+      </div>
+
+      <p class="hint" id="s1Hinweis"></p>
+      <p class="hint anon" id="s1Anon"></p>
+    </section>
+
+    <!-- ========== Schritt 2 – Schätzen, dann auflösen ========== -->
+    <section class="step" data-step="2" aria-label="Schritt 2">
+      <!-- 2a: Vermutung -->
+      <div id="s2a">
+        <h2 id="s2Titel"></h2>
+        <p id="s2Text"></p>
+
+        <p class="axis axis-top" id="s2AxisTop"></p>
+        <ul id="sortlist" class="sortlist" aria-label="Zutaten ordnen"></ul>
+        <p class="axis axis-bottom" id="s2AxisBottom"></p>
+
+        <button class="btn btn-primary" id="s2AufloesenBtn" type="button"></button>
+        <p class="hint" id="s2AufloesenHinweis"></p>
+      </div>
+
+      <!-- 2b: Auflösung -->
+      <div id="s2b" hidden>
+        <h2 id="s2DeineTitel"></h2>
+        <ol id="s2DeineReihenfolge" class="ranklist"></ol>
+
+        <h2 id="s2TatTitel"></h2>
+        <div id="s2Bars" class="bars"></div>
+        <p class="hint" id="s2EaternityHinweis"></p>
+
+        <h2 id="s2UeTitel"></h2>
+        <p id="s2UeIntro"></p>
+
+        <h3 id="s2P1Titel"></h3>
+        <p id="s2P1Text"></p>
+        <button class="btn btn-secondary" id="s2WiesoBtn" type="button"></button>
+        <div id="s2WiesoWrap" class="reveal" hidden>
+          <p id="s2WiesoIntro"></p>
+          <ul id="s2WiesoPunkte"></ul>
+        </div>
+
+        <h3 id="s2P2Titel"></h3>
+        <p id="s2P2Text"></p>
+
+        <p class="goodnews" id="s2GuteNachricht"></p>
+
+        <button class="btn btn-primary" id="s2WeiterBtn" type="button"></button>
+      </div>
+    </section>
+
+    <!-- ========== Schritt 3 – Mahlzeit leichter gemacht ========== -->
+    <section class="step" data-step="3" aria-label="Schritt 3">
+      <!-- 3a: Variantenvorschlag -->
+      <div id="s3a" hidden>
+        <h2 id="s3aTitel"></h2>
+        <p id="s3aIntro"></p>
+
+        <figure class="menu-card" id="s3aCard">
+          <img id="s3aBild" src="" alt="">
+          <figcaption>
+            <strong id="s3aAltName"></strong>
+            <span id="s3aVariantentext" class="variant"></span>
+          </figcaption>
+        </figure>
+
+        <p id="s3aVorschlagHinweis" class="muted"></p>
+        <p id="s3aReduktionHinweis" class="hint"></p>
+        <button class="btn btn-link" id="s3aBerechnungBtn" type="button"></button>
+        <div id="s3aBerechnungWrap" class="reveal" hidden>
+          <p id="s3aBerechnungText"></p>
+        </div>
+      </div>
+
+      <!-- 3b: Bestätigung -->
+      <div id="s3b" hidden>
+        <h2 id="s3bTitel"></h2>
+        <p id="s3bText"></p>
+      </div>
+
+      <!-- gemeinsam: Emissionsarme Menus + Weiter -->
+      <button class="btn btn-secondary" id="s3EmissionsarmBtn" type="button"></button>
+      <div id="s3EmissionsarmWrap" hidden>
+        <h3 id="s3EmissionsarmTitel"></h3>
+        <div id="s3EmissionsarmListe" class="tiles"></div>
+      </div>
+      <button class="btn btn-primary" id="s3WeiterBtn" type="button"></button>
+    </section>
+
+    <!-- ========== Schritt 4 – Freiwilliger Vorsatz ========== -->
+    <section class="step" data-step="4" aria-label="Schritt 4">
+      <!-- 4a: Frage -->
+      <div id="s4a">
+        <h2 id="s4Frage"></h2>
+        <button class="btn btn-primary" id="s4JaBtn" type="button"></button>
+        <button class="btn btn-secondary" id="s4SkipBtn" type="button"></button>
+      </div>
+
+      <!-- 4b: Wenn-dann-Plan -->
+      <div id="s4b" hidden>
+        <p id="s4PlanIntro"></p>
+
+        <p class="plan-label" id="s4AusloeserTitel"></p>
+        <div id="s4Ausloeser" class="answers"></div>
+
+        <p class="plansatz" id="s4PlanSatz" hidden></p>
+
+        <figure class="menu-card" id="s4AltCard" hidden>
+          <img id="s4AltBild" src="" alt="">
+          <figcaption><span id="s4ZuDeinem" class="muted"></span> <strong id="s4AltName"></strong></figcaption>
+        </figure>
+
+        <div class="reminder">
+          <h3 id="s4ErinnerungFrage"></h3>
+          <p class="hint" id="s4ErinnerungHinweis"></p>
+          <label class="date-label" id="s4DatumLabel" for="s4Datum"></label>
+          <input type="datetime-local" id="s4Datum" class="date-input">
+          <button class="btn btn-secondary" id="s4ErinnerungJaBtn" type="button"></button>
+          <p class="hint fallback" id="s4ErinnerungFallback"></p>
+        </div>
+
+        <button class="btn btn-primary" id="s4FertigBtn" type="button"></button>
+      </div>
+    </section>
+
+    <!-- ========== Schritt 5 – Satz zum Mitnehmen ========== -->
+    <section class="step" data-step="5" aria-label="Schritt 5">
+      <div id="s5Kernsatz" class="kernsatz"></div>
+    </section>
+
+  </main>
+
+  <!-- === footer: grey panel · legal links · copyright · logo=Home === -->
+  <footer class="ftr">
+    <div class="ftr-inner">
+      <div class="ftr-text">
+        <p class="ftr-legal">
+          <a id="lnkImpressum" href="#">Impressum</a>
+          <a id="lnkDatenschutz" href="#" class="noConsent">Datenschutz</a>
+        </p>
+        <p class="ftr-copy">© <span id="year">2026</span> <span id="ftrCopy"></span></p>
+      </div>
+      <a class="ftr-logo" href="index.html" aria-label="N-Trail — Home">
+        <img id="ftrLogo" src="images/Logo.png" alt="N-Trail">
+      </a>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@1/Sortable.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
