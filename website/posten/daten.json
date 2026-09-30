@@ -244,7 +244,7 @@
       "fallback": "Funktioniert der Import in den Kalender oder das Herunterladen nicht? Kopiere den Text oben und trage die Erinnerung selbst in deinen Kalender ein.",
       "termin_label": "Termin",
       "ics_titel": "Mein Klima-Vorsatz",
-      "ics_zusatz": "Ein kleiner Schritt — gut fürs Klima und für deine Gesundheit.",
+      "ics_zusatz": "Ein kleiner Schritt — gut fürs Klima und für die Gesundheit.",
       "ics_menu_zeile": "Vorgeschlagenes Menu: {menu}",
       "default_tage": 7,
       "default_stunde": 18,
