@@ -1,20 +1,19 @@
 Schriften (Self-Hosting)
 ========================
 
-Lege die folgenden Schrift-Dateien in diesen Ordner (css/):
+In diesem Ordner (css/) liegen die selbst gehosteten Lato-Schnitte. Die Seite
+bindet über ../style.css genau diese drei Gewichte ein:
 
-  Lato-Regular.woff2   (Lato, Gewicht 400)
-  Lato-Regular.woff    (Fallback für ältere Browser)
-  Lato-Black.woff2     (Lato, Gewicht 900 — Titel, Buttons, Menü)
-  Lato-Black.woff      (Fallback)
+  Lato-Regular.woff2 / .woff   Lato 400 — Textstile «Text» und «Hinweis»
+  Lato-Bold.woff2    / .woff   Lato 700 — Textstil «Titel» (h1/h2/h3, Buttons, Menü)
+  Lato-Black.woff2   / .woff   Lato 900 — Textstile «Haupttitel» und «Impressum»
 
-Die @font-face-Regeln stehen bereits oben in ../style.css und greifen
-automatisch, sobald die Dateien hier liegen. Bis dahin nutzt die Seite
-die System-Schrift aus dem Fallback-Stack (kein Fehler, nur ein anderer Look).
+Ebenfalls im Ordner, aber aktuell nicht eingebunden (kein Gestaltungselement
+der Seite verwendet sie): Lato-Light, Lato-Hairline, Lato-Italic. Sie können
+liegen bleiben oder vor dem Hochladen gelöscht werden — sie werden nie geladen.
 
 Bezugsquelle: Lato ist unter der SIL Open Font License frei verfügbar
-(z. B. Google Fonts → "Download family"). Die .ttf danach in .woff2/.woff
-umwandeln (z. B. mit einem woff2-Konverter) und hier ablegen.
+(z. B. Google Fonts → "Download family").
 
 Fira Sans wird NICHT benötigt (war nur für den Info-Button gedacht, der
 in diesem Posten entfällt).
