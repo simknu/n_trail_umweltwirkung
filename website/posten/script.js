@@ -98,9 +98,10 @@ function rowMarkup(m, attrs){
     </button>`;
 }
 
-/* reine Anzeige-Zeile (kein Klick): Vorschlagslisten */
-function staticRowMarkup(m){
-  return `<div class="menu-row">
+/* reine Anzeige-Zeile (kein Klick): Vorschlagslisten.
+   gross = Variantenvorschlag in Schritt 3a (Bild ca. dreifach) */
+function staticRowMarkup(m, gross){
+  return `<div class="menu-row${gross ? ' menu-row--gross' : ''}">
       <img class="menu-thumb" src="${m.bild}" alt="">
       <span class="menu-row-name">${m.name}</span>
     </div>`;
@@ -187,7 +188,6 @@ function buildSchritt2(){
   setText('s2AxisTop', s.achse_oben);
   setText('s2AxisBottom', s.achse_unten);
   setText('s2AufloesenBtn', s.aufloesen_button);
-  setText('s2AufloesenHinweis', s.aufloesen_hinweis);
   setText('s2DeineTitel', s.deine_reihenfolge_titel);
   setText('s2TatTitel', s.tatsaechlich_titel);
   setHtml('s2EaternityHinweis', linkEaternity(s.eaternity_hinweis));
@@ -260,21 +260,22 @@ function prepSchritt3(){
     const a = menu.alternative;
     setText('s3aTitel', fill(s.rahmen_3a_titel, { gericht: state.menu_name }));
     setText('s3aIntro', s.rahmen_3a_intro);
-    el('s3aBild').src = a.bild;
-    el('s3aBild').alt = a.name;
-    setText('s3aAltName', a.name);
+    // "Wähle das nächste Mal [Artikel]" — Artikel je Alternative, leer wo keiner passt
+    setText('s3aWaehleSatz', [s.waehle_satz, a.artikel].filter(Boolean).join(' '));
+    el('s3aMenuZeile').innerHTML = staticRowMarkup(a, true);
     el('s3aVariantentext').innerHTML = a.variantentext;   // nur <br>/<strong> aus vertrauenswürdiger Datenquelle
     setHtml('s3aReduktionSatz', a.reduktion_satz);
     setHtml('s3aVorschlagHinweis', paragraphs(s.vorschlag_hinweis));
 
-    setText('s3aBerechnungHinweis', s.berechnung_hinweis);
-    setText('s3aBerechnungBtn', s.berechnung_button);
+    // "klicke hier" im Hinweis klappt den Berechnungstext auf (kein separater Button)
+    setHtml('s3aBerechnungHinweis', linkEaternity(s.berechnung_hinweis).replace('{klick}',
+      `<button type="button" class="link-inline" id="s3aBerechnungBtn">${s.berechnung_link_text}</button>`));
     setHtml('s3aBerechnungWrap', paragraphs(s.berechnung_text));
     el('s3aBerechnungWrap').hidden = true;
     el('s3aBerechnungBtn').onclick = () => toggleReveal('s3aBerechnungWrap');
   } else {
     setText('s3bTitel', s.rahmen_3b_titel);
-    setText('s3bText', fill(s.rahmen_3b_text, { gericht: state.menu_name }));
+    setHtml('s3bText', fill(s.rahmen_3b_text, { gericht: state.menu_name }));
   }
 
   // Emissionsarme Menus (gemeinsam)
@@ -331,7 +332,8 @@ function prepSchritt4(){
   setText('s4DatumLabel', r.datum_label);
   setText('s4VorschauTitel', r.vorschau_titel);
   setText('s4VorschauHinweis', r.vorschau_hinweis);
-  setText('s4KopierenBtn', r.kopieren_button);
+  el('s4KopierenBtn').setAttribute('aria-label', r.kopieren_label);
+  el('s4KopierenBtn').title = r.kopieren_label;
   setText('s4ErinnerungJaBtn', r.ja_button);
   setText('s4ErinnerungFallback', r.fallback);
   setText('s4WeiterBtn', s.weiter_button);
@@ -341,7 +343,6 @@ function prepSchritt4(){
   el('s4a').hidden = false;
   el('s4b').hidden = true;
   el('s4PlanSatz').hidden = true;
-  el('s4AltWrap').hidden = true;
   el('s4KopierStatus').hidden = true;
   document.querySelector('.reminder').hidden = true;
 
@@ -351,11 +352,6 @@ function prepSchritt4(){
   el('s4Ausloeser').querySelectorAll('.btn-answer').forEach(b => {
     b.addEventListener('click', () => selectAusloeser(b, s.ausloeser[+b.dataset.i]));
   });
-
-  // Alternative (Bild + Name) zum gewählten Menü
-  const a = DATA.schritt3.menus[String(state.menu_nr)].alternative;
-  setText('s4ZuDeinem', fill(s.zu_deinem_gericht, { gericht: state.menu_name }));
-  el('s4AltListe').innerHTML = staticRowMarkup(a);
 
   // Erinnerungsdatum: Default in einer Woche (lokal), überschreibbar
   el('s4Datum').value = defaultReminderValue();
@@ -374,7 +370,6 @@ function selectAusloeser(btn, ausloeser){
   btn.setAttribute('aria-pressed', 'true');
   el('s4PlanSatz').textContent = planSatz();
   el('s4PlanSatz').hidden = false;
-  el('s4AltWrap').hidden = false;
   document.querySelector('.reminder').hidden = false;
   el('s4KopierStatus').hidden = true;
   updateVorschau();

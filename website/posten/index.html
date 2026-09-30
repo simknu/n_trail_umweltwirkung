@@ -55,14 +55,13 @@
       <div id="s2a">
         <h2 id="s2Titel"></h2>
         <p id="s2Text"></p>
-        <p id="s2DragHinweis"></p>
+        <p class="hinweis" id="s2DragHinweis"></p>
 
         <p class="axis axis-top" id="s2AxisTop"></p>
         <ul id="sortlist" class="sortlist" aria-label="Zutaten ordnen"></ul>
         <p class="axis axis-bottom" id="s2AxisBottom"></p>
 
         <button class="btn btn-primary" id="s2AufloesenBtn" type="button"></button>
-        <p class="hinweis" id="s2AufloesenHinweis"></p>
       </div>
 
       <!-- 2b: Auflösung -->
@@ -101,13 +100,9 @@
         <h2 id="s3aTitel"></h2>
         <p id="s3aIntro"></p>
 
-        <figure class="menu-card" id="s3aCard">
-          <img id="s3aBild" src="" alt="">
-          <figcaption>
-            <strong id="s3aAltName"></strong>
-            <span id="s3aVariantentext" class="variant"></span>
-          </figcaption>
-        </figure>
+        <p id="s3aWaehleSatz"></p>
+        <div id="s3aMenuZeile" class="menulist menulist--static"></div>
+        <p id="s3aVariantentext"></p>
 
         <p class="reduktion" id="s3aReduktionSatz"></p>
 
@@ -130,7 +125,6 @@
       <!-- Berechnungs-Hinweis (nur 3a) + Weiter -->
       <div id="s3aBerechnung" hidden>
         <p class="hinweis" id="s3aBerechnungHinweis"></p>
-        <button class="btn btn-link" id="s3aBerechnungBtn" type="button"></button>
         <div id="s3aBerechnungWrap" class="reveal hinweis" hidden></div>
       </div>
 
@@ -155,11 +149,6 @@
 
         <p class="plansatz" id="s4PlanSatz" hidden></p>
 
-        <div id="s4AltWrap" hidden>
-          <p class="plan-label" id="s4ZuDeinem"></p>
-          <div id="s4AltListe" class="menulist menulist--static"></div>
-        </div>
-
         <div class="reminder">
           <h3 id="s4ErinnerungFrage"></h3>
           <p class="hinweis" id="s4ErinnerungHinweis"></p>
@@ -168,8 +157,15 @@
 
           <h3 id="s4VorschauTitel"></h3>
           <p class="hinweis" id="s4VorschauHinweis"></p>
-          <pre class="ics-preview" id="s4Vorschau" tabindex="0"></pre>
-          <button class="btn btn-secondary" id="s4KopierenBtn" type="button"></button>
+          <div class="ics-box">
+            <button class="ics-copy" id="s4KopierenBtn" type="button">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <rect x="9" y="9" width="11" height="12" rx="2"></rect>
+                <path d="M5 15V5a2 2 0 0 1 2-2h8"></path>
+              </svg>
+            </button>
+            <pre class="ics-preview" id="s4Vorschau" tabindex="0"></pre>
+          </div>
           <p class="hinweis" id="s4KopierStatus" role="status" hidden></p>
 
           <button class="btn btn-secondary" id="s4ErinnerungJaBtn" type="button"></button>

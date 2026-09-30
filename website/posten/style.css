@@ -28,7 +28,8 @@
   /* derived */
   --cta-hover:#3E5304; --text:#000; --muted:#6B6B6B;  /* --muted nur Icons/Haarlinien, nie Lesetext */
   --bg:#FFFFFF; --surface:#F4F5EF; --border:#E3E3DD; --track:#EFF0EA;
-  --maxw:680px; --radius:6px; --space:1rem; --hdr-h:56px; --thumb:56px;
+  --maxw:680px; --radius:6px; --space:1rem; --hdr-h:56px;
+  --thumb:56px; --thumb-gross:min(168px, 45%);  /* Menubild klein / ca. dreifach */
 }
 *{box-sizing:border-box}
 html{font-size:16px}                 /* rem = 16 px fix; nur die Schrift skaliert über --fs-* */
@@ -74,7 +75,9 @@ li{margin:.35rem 0}
 /* === hero (Haupttitel; kein Scrim, kein grauer Balken) === */
 .hero{position:relative}
 .hero img{width:100%;aspect-ratio:766/379;object-fit:cover;display:block}
-.hero-title{position:absolute;left:0;bottom:0;margin:0;padding:.35em .5em;
+/* linke Kante und Breite wie .container, damit der Titel bündig zum Text darunter sitzt */
+.hero-title{position:absolute;left:0;right:0;bottom:1.25rem;margin:0 auto;
+  max-width:var(--maxw);padding:0 var(--space);
   color:#fff;font-family:var(--font);font-weight:900;font-size:var(--fs-hero);line-height:1.1;
   text-shadow:0 1px 3px rgba(0,0,0,.55)}
 
@@ -102,6 +105,8 @@ li{margin:.35rem 0}
 .btn-secondary:hover,.btn-secondary:focus-visible{border-color:var(--brand)}
 .btn-link{background:transparent;border:0;color:var(--cta);text-decoration:underline;
   min-height:0;padding:.35rem 0;width:auto;margin:.25rem 0;font-weight:400;text-align:left}
+.link-inline{background:none;border:0;padding:0;margin:0;cursor:pointer;color:var(--cta);
+  text-decoration:underline;font:inherit}
 .answers{display:flex;flex-direction:column;gap:.75rem;margin:.75rem 0}
 .btn-answer{background:var(--surface);color:#000;border:1px solid var(--border);
   border-radius:var(--radius);min-height:48px;padding:.8rem 1rem;text-align:left;cursor:pointer;
@@ -128,6 +133,10 @@ li{margin:.35rem 0}
 .menu-group-body{padding:0 .75rem .75rem}
 .menu-group-body .menu-frage{margin:0 0 .5rem}
 .menu-group-body .menulist{margin:0}
+/* grosse Zeile (Variantenvorschlag): Bild ca. dreifach, Name weiterhin rechts */
+.menu-row--gross .menu-thumb{flex-basis:var(--thumb-gross);width:var(--thumb-gross);
+  height:var(--thumb-gross);border-radius:16px}
+
 /* nicht anklickbare Liste (Vorschläge, reine Anzeige) */
 .menulist--static .menu-row{cursor:default}
 .menulist--static .menu-row:hover{border-color:var(--border)}
@@ -171,10 +180,16 @@ li{margin:.35rem 0}
 .date-input{width:100%;min-height:48px;padding:.6rem .75rem;border:1px solid var(--border);
   border-radius:var(--radius);background:var(--bg);color:#000;
   font-family:var(--font);font-weight:400;font-size:var(--fs-base);line-height:1.3}
-.ics-preview{margin:.5rem 0;padding:.85rem 1rem;background:var(--surface);
+.ics-box{position:relative;margin:.5rem 0}
+.ics-preview{margin:0;padding:.85rem 3rem .85rem 1rem;background:var(--surface);
   border:1px solid var(--border);border-radius:var(--radius);
   font-family:var(--font);font-weight:400;font-size:var(--fs-base);line-height:1.4;color:#000;
   white-space:pre-wrap;overflow-wrap:anywhere}
+.ics-copy{position:absolute;top:.35rem;right:.35rem;width:40px;height:40px;padding:8px;
+  border:0;border-radius:var(--radius);background:transparent;cursor:pointer;color:var(--cta)}
+.ics-copy:hover,.ics-copy:focus-visible{background:rgba(0,0,0,.06)}
+.ics-copy svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:2;
+  stroke-linecap:round;stroke-linejoin:round}
 
 /* === Schritt 5 === */
 .kernsatz{margin:2rem 0}
