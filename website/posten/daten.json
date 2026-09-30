@@ -21,7 +21,7 @@
     "intro": "Nun geht es um die Kartoffel, das Rüebli und das Hackfleisch. Genau, es geht um deine Ernährung.",
     "frage_gross": "Denk an ein Essen, das du gerne isst.",
     "frage_klein": "Was kommt dem am nächsten?",
-    "hinweis": "Tippe auf ein Gericht. Danach geht es genau um diese Auswahl.",
+    "hinweis": "Tippe auf ein Gericht und bestätige deine Auswahl.",
     "anonymitaets_hinweis": "Deine Auswahl ist anonym und wird nicht ausgewertet.",
     "mehr_button": "Etwas anderes",
     "auswahl_button": "{menu} auswählen",
@@ -208,10 +208,10 @@
       { "menu_nr": 5,  "name": "Falafel (Döner ohne Fleisch)",   "bild": "images/5_Falafel.png",                        "herkunft": "orientalisch" },
       { "menu_nr": 8,  "name": "Spaghetti Napoli",               "bild": "images/8_Spaghetti_Napoli.png",               "herkunft": "italienisch" },
       { "menu_nr": 30, "name": "Spaghetti mit Linsenbolognese",  "bild": "images/30_Spaghetti_mit_Linsenbolognese.png", "herkunft": "italienisch" },
-      { "menu_nr": 23, "name": "Pad Thai (vegetarisch)",         "bild": "images/23_Pad_Thai_Vegetarisch.png",          "herkunft": "thailändisch" },
+      { "menu_nr": 23, "name": "Vegetarisches Pad Thai",          "bild": "images/23_Pad_Thai_Vegetarisch.png",          "herkunft": "thailändisch" },
       { "menu_nr": 24, "name": "Palak Tofu",                     "bild": "images/24_Palak_Tofu.png",                    "herkunft": "indisch" },
-      { "menu_nr": 29, "name": "Sushi (vegetarisch)",            "bild": "images/29_Sushi_Vegetarisch.png",             "herkunft": "japanisch" },
-      { "menu_nr": 26, "name": "Schnitzel mit Pommes (vegetarisch)", "bild": "images/26_Schnitzel_Vegetarisch.png",     "herkunft": "Schweiz / europäisch" },
+      { "menu_nr": 29, "name": "Vegetarisches Sushi",             "bild": "images/29_Sushi_Vegetarisch.png",             "herkunft": "japanisch" },
+      { "menu_nr": 26, "name": "Vegetarisches Schnitzel mit Pommes", "bild": "images/26_Schnitzel_Vegetarisch.png",     "herkunft": "Schweiz / europäisch" },
       { "menu_nr": 11, "name": "Gemischter Salat",               "bild": "images/11_Gemischter_Salat.png",              "herkunft": "neutral" },
       { "menu_nr": 17, "name": "Rösti mit Spiegelei",            "bild": "images/17_Roesti_mit_Spiegelei.png",          "herkunft": "Schweiz" }
     ]
