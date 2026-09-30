@@ -96,9 +96,13 @@ html{font-size:16px}                 /* rem = 16 px fixed; only type scales, via
 body{margin:0;font-family:var(--font);font-weight:400;font-size:var(--fs-base);
   line-height:1.4;color:var(--text);background:var(--bg)}
 
-/* Titel — headings (same size as Text, heavier) */
-h1,h2,h3{margin:1.5rem 0 .75rem;font-family:var(--font);font-weight:700;
+/* Titel — headings (same size as Text, heavier).
+   The top margin is a blank line more than the paragraph gap: with Titel and Text
+   at the same size, that lead is what separates the sections. */
+h1,h2,h3{margin:2.75rem 0 .75rem;font-family:var(--font);font-weight:700;
   font-size:var(--fs-base);line-height:1.3;color:#000}
+h3{margin:2.25rem 0 .5rem}
+.step h2:first-child,.step h3:first-child{margin-top:1rem}  /* first heading of a step: no lead */
 
 /* Hinweis — data/source notes and figure captions (smaller, still black) */
 .hinweis,.fig figcaption{font-family:var(--font);font-weight:400;
@@ -127,7 +131,9 @@ An optional info-button + pop-up and a cookie banner may be added; omit the
 info-button entirely if the station has no pop-up target. Hero image, sponsor
 logos and own illustrations carry **no credit**.
 
-Principles: one column, one idea, one action per screen; **design at 320 px**;
+Principles: one column, one idea, one action per screen; a tap **selects**, a
+button **commits** (see the menu list) — never navigate away on the tap itself;
+headings get a blank line of lead so the page breathes; **design at 320 px**;
 between 320 and ~768 px the single column fills the width (up to `--maxw`) and
 type grows gently, then centres and caps; calm surfaces, hairline borders, no
 heavy cards or shadows. **No grey bar under the hero, none above the footer.**
@@ -166,10 +172,13 @@ heavy cards or shadows. **No grey bar under the hero, none above the footer.**
      .menu-row--gross is the same row with a ~3× picture, for the one suggestion
      a screen leads with. -->
 <div class="menulist">                                      <!-- rows generated from data -->
-  <button class="menu-row" type="button" data-nr="3">
+  <button class="menu-row" type="button" data-nr="3" aria-pressed="false">
     <img class="menu-thumb" src="images/3_x.png" alt="">
     <span class="menu-row-name">Schnitzel mit Pommes</span>
   </button>
+  <!-- on tap: aria-pressed="true" on the row, and this button is inserted right
+       after it; only it moves on. Tapping another row moves both. -->
+  <button class="btn btn-primary btn-auswahl" id="pickBtn">Schnitzel mit Pommes auswählen</button>
   <div class="menu-group">
     <button class="menu-row menu-row--toggle" type="button" aria-expanded="false" aria-controls="grp-pizza">
       <img class="menu-thumb" src="images/2_x.png" alt="">
@@ -242,6 +251,8 @@ heavy cards or shadows. **No grey bar under the hero, none above the footer.**
   border-radius:var(--radius);cursor:pointer;text-align:left;
   font-family:var(--font);font-weight:700;font-size:var(--fs-base);line-height:1.3;color:#000}
 .menu-row:hover,.menu-row:focus-visible{border-color:var(--brand)}
+.menu-row[aria-pressed="true"]{border-color:var(--cta);background:#EEF1E4}  /* selected, not yet confirmed */
+.btn-auswahl{margin:.25rem 0}                                 /* confirm button, sits under its row */
 .menu-thumb{flex:0 0 var(--thumb);width:var(--thumb);height:var(--thumb);
   border-radius:12px;object-fit:cover;background:var(--surface)}  /* app-icon size (--thumb:56px) */
 .menu-row-name{flex:1 1 auto}
@@ -316,6 +327,18 @@ function render(){
 function toggleGroup(btn){
   const body=document.getElementById(btn.getAttribute('aria-controls'));
   const open=body.hidden; body.hidden=!open; btn.setAttribute('aria-expanded',String(open));
+}
+
+// menu list: a tap selects, the button under the row commits — no abrupt jump
+function markRow(btn,label,onCommit){
+  document.querySelectorAll('.menu-row[data-nr]').forEach(b=>b.setAttribute('aria-pressed','false'));
+  btn.setAttribute('aria-pressed','true');
+  const alt=document.getElementById('pickBtn'); if(alt) alt.remove();
+  const ok=document.createElement('button');
+  ok.id='pickBtn'; ok.type='button'; ok.className='btn btn-primary btn-auswahl';
+  ok.textContent=label;                        // e.g. `${name} auswählen`, text from daten.json
+  ok.addEventListener('click',onCommit);
+  btn.insertAdjacentElement('afterend',ok);
 }
 
 // reveal bars: neutral & ordinal — one colour, length carries meaning, never red
@@ -399,7 +422,7 @@ import; some Android browsers just save the file). Test on real iOS/Android.
 ## Do / Don't
 
 - **Do:** calm, factual, one green accent; one action per screen; skippable, nothing
-  required; caption + credit **only where a source requires it** (hero, sponsor
+  required; let a choice be taken back before it commits; caption + credit **only where a source requires it** (hero, sponsor
   logos and own illustrations need none); readable text is always one of the five
   styles in black; tap targets ≥48px; visible `:focus-visible`; `alt` text;
   respect `prefers-reduced-motion`; Swiss German copy ("ss", not "ß"), simple,

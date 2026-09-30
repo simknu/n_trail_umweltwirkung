@@ -21,9 +21,10 @@
     "intro": "Nun geht es um die Kartoffel, das Rüebli und das Hackfleisch. Genau, es geht um deine Ernährung.",
     "frage_gross": "Denk an ein Essen, das du gerne isst.",
     "frage_klein": "Was kommt dem am nächsten?",
-    "hinweis": "Tippe auf ein Gericht. Danach geht es genau um diese Auswahl.",
+    "hinweis": "Tippe auf ein Gericht und bestätige deine Auswahl.",
     "anonymitaets_hinweis": "Deine Auswahl ist anonym und wird nicht ausgewertet.",
     "mehr_button": "Etwas anderes",
+    "auswahl_button": "{menu} auswählen",
     "ebene2_intro": "Kein Problem — vielleicht ist eines davon nah dran?",
     "ebene2_hinweis": "Passt nichts genau? Wähle ein Menu, das ungefähr zu deiner Ernährung passt. Oben siehst du alle Menus, die zur Auswahl stehen.",
     "ebene1": [
@@ -177,10 +178,10 @@
               "alternative": { "menu_nr": 12, "name": "Gemüse-Wähe", "bild": "images/12_Gemuesewaehe.png", "reduktion_prozent": 20, "artikel": "eine",
                 "variantentext": "Alternativ könntest du eine Gemüse-Wähe ausprobieren. Diese hat weniger Käse und Rahm, wird dadurch leichter und auch klimafreundlicher.",
                 "reduktion_satz": "Wenn du <strong>Gemüse-Wähe</strong> wählst, reduziert sich die Klimawirkung um <strong>20 %</strong> im Vergleich zur Käse-Zwiebel-Wähe." } },
-      "14": { "name": "Lasagne mit Fleisch", "modus": "vorschlag",
+      "14": { "name": "Lasagne mit Hackfleisch", "modus": "vorschlag",
               "alternative": { "menu_nr": 15, "name": "Vegetarische Lasagne", "bild": "images/15_Vegetarische_Lasagne.png", "reduktion_prozent": 50, "artikel": "eine",
                 "variantentext": "Probier mal eine Lasagne mit Linsen statt Hackfleisch. Schmeckt fast identisch und hat mehr Ballaststoffe, was gut für deine Gesundheit ist.<br>Wenn du nicht ganz auf Fleisch verzichten möchtest, kannst du auch eine Sauce mit halb Hackfleisch, halb Linsen ausprobieren.",
-                "reduktion_satz": "Wenn du <strong>Vegetarische Lasagne</strong> wählst, reduziert sich die Klimawirkung um <strong>50 %</strong> im Vergleich zur Lasagne mit Fleisch. Kleinere Änderungen (z. B. eine Sauce mit halb Hackfleisch, halb Linsen) reduzieren die Klimawirkung entsprechend weniger." } },
+                "reduktion_satz": "Wenn du <strong>Vegetarische Lasagne</strong> wählst, reduziert sich die Klimawirkung um <strong>50 %</strong> im Vergleich zur Lasagne mit Hackfleisch. Kleinere Änderungen (z. B. eine Sauce mit halb Hackfleisch, halb Linsen) reduzieren die Klimawirkung entsprechend weniger." } },
       "15": { "name": "Vegetarische Lasagne", "modus": "bestaetigung" },
       "16": { "name": "Sushi", "modus": "vorschlag",
               "alternative": { "menu_nr": 29, "name": "Vegetarisches Sushi", "bild": "images/29_Sushi_Vegetarisch.png", "reduktion_prozent": 30, "artikel": "",
@@ -195,11 +196,11 @@
               "alternative": { "menu_nr": 24, "name": "Palak Tofu", "bild": "images/24_Palak_Tofu.png", "reduktion_prozent": 65, "artikel": "",
                 "variantentext": "Spinat, Joghurt und Gemüse bleiben gleich, nur der Paneer wird durch Tofu ersetzt. Durch diese kleine Änderung kannst du die Klimawirkung des Menus spürbar verkleinern.",
                 "reduktion_satz": "Wenn du <strong>Palak Tofu</strong> wählst, reduziert sich die Klimawirkung um <strong>65 %</strong> im Vergleich zum Palak Paneer." } },
-      "20": { "name": "Pastetli mit Fleisch", "modus": "vorschlag",
-              "alternative": { "menu_nr": 21, "name": "Pastetli ohne Fleisch", "bild": "images/21_Pastetli_mit_Pilzsauce.png", "reduktion_prozent": 50, "artikel": "ein",
+      "20": { "name": "Pastetli mit Brätkügeli", "modus": "vorschlag",
+              "alternative": { "menu_nr": 21, "name": "Pastetli mit Pilzsauce", "bild": "images/21_Pastetli_mit_Pilzsauce.png", "reduktion_prozent": 50, "artikel": "ein",
                 "variantentext": "Probier mal eine Pastetli-Sauce ohne Fleisch. Es gibt auch Rezepte ohne Pilze, wenn du diese nicht magst.<br>Wenn du nicht ganz auf Fleisch verzichten magst, nimm ein Poulet-Ragout statt Brätkügeli. Dies hilft deiner Gesundheit und dem Klima.",
-                "reduktion_satz": "Wenn du <strong>Pastetli ohne Fleisch</strong> wählst, reduziert sich die Klimawirkung um <strong>50 %</strong> im Vergleich zum Pastetli mit Fleisch. Kleinere Änderungen (z. B. ein Poulet-Ragout statt Brätkügeli) reduzieren die Klimawirkung entsprechend weniger." } },
-      "21": { "name": "Pastetli ohne Fleisch", "modus": "bestaetigung" }
+                "reduktion_satz": "Wenn du <strong>Pastetli mit Pilzsauce</strong> wählst, reduziert sich die Klimawirkung um <strong>50 %</strong> im Vergleich zum Pastetli mit Brätkügeli. Kleinere Änderungen (z. B. ein Poulet-Ragout statt Brätkügeli) reduzieren die Klimawirkung entsprechend weniger." } },
+      "21": { "name": "Pastetli mit Pilzsauce", "modus": "bestaetigung" }
     },
 
     "emissionsarm_anzahl": 5,
@@ -207,17 +208,17 @@
       { "menu_nr": 5,  "name": "Falafel (Döner ohne Fleisch)",   "bild": "images/5_Falafel.png",                        "herkunft": "orientalisch" },
       { "menu_nr": 8,  "name": "Spaghetti Napoli",               "bild": "images/8_Spaghetti_Napoli.png",               "herkunft": "italienisch" },
       { "menu_nr": 30, "name": "Spaghetti mit Linsenbolognese",  "bild": "images/30_Spaghetti_mit_Linsenbolognese.png", "herkunft": "italienisch" },
-      { "menu_nr": 23, "name": "Pad Thai (vegetarisch)",         "bild": "images/23_Pad_Thai_Vegetarisch.png",          "herkunft": "thailändisch" },
+      { "menu_nr": 23, "name": "Vegetarisches Pad Thai",          "bild": "images/23_Pad_Thai_Vegetarisch.png",          "herkunft": "thailändisch" },
       { "menu_nr": 24, "name": "Palak Tofu",                     "bild": "images/24_Palak_Tofu.png",                    "herkunft": "indisch" },
-      { "menu_nr": 29, "name": "Sushi (vegetarisch)",            "bild": "images/29_Sushi_Vegetarisch.png",             "herkunft": "japanisch" },
-      { "menu_nr": 26, "name": "Schnitzel mit Pommes (vegetarisch)", "bild": "images/26_Schnitzel_Vegetarisch.png",     "herkunft": "Schweiz / europäisch" },
+      { "menu_nr": 29, "name": "Vegetarisches Sushi",             "bild": "images/29_Sushi_Vegetarisch.png",             "herkunft": "japanisch" },
+      { "menu_nr": 26, "name": "Vegetarisches Schnitzel mit Pommes", "bild": "images/26_Schnitzel_Vegetarisch.png",     "herkunft": "Schweiz / europäisch" },
       { "menu_nr": 11, "name": "Gemischter Salat",               "bild": "images/11_Gemischter_Salat.png",              "herkunft": "neutral" },
       { "menu_nr": 17, "name": "Rösti mit Spiegelei",            "bild": "images/17_Roesti_mit_Spiegelei.png",          "herkunft": "Schweiz" }
     ]
   },
 
   "schritt4": {
-    "frage": "Willst du es beim nächsten passenden Moment einmal ausprobieren?",
+    "frage": "Hast du Lust, die klimaärmere Variante bei nächster Gelegenheit mal auszuprobieren?",
     "ja_button": "Ja, einmal ausprobieren",
     "ueberspringen_button": "Überspringen",
     "plan_intro": "Ein kleiner Plan, der erfahrungsgemäss hilft: Nimm dir einen konkreten Moment vor.",
@@ -243,7 +244,7 @@
       "fallback": "Funktioniert der Import in den Kalender oder das Herunterladen nicht? Kopiere den Text oben und trage die Erinnerung selbst in deinen Kalender ein.",
       "termin_label": "Termin",
       "ics_titel": "Mein Klima-Vorsatz",
-      "ics_zusatz": "Ein kleiner Schritt — gut fürs Klima und oft auch für deine Gesundheit.",
+      "ics_zusatz": "Ein kleiner Schritt — gut fürs Klima und für deine Gesundheit.",
       "ics_menu_zeile": "Vorgeschlagenes Menu: {menu}",
       "default_tage": 7,
       "default_stunde": 18,
@@ -253,9 +254,11 @@
   },
 
   "schritt5": {
-    "kernsatz": [
+    "kernsatz_box": [
       "Wenn du eine Sache ändern möchtest: Verzichte hin und wieder auf Fleisch.",
-      "Wenn du dich bereits vegetarisch ernährst, probier auch einmal die vegane Option.",
+      "Wenn du dich bereits vegetarisch ernährst, probier auch einmal die vegane Option."
+    ],
+    "kernsatz_text": [
       "Das ist der Tausch mit dem grössten Effekt — fürs Klima und für deine Gesundheit."
     ],
     "weiter_button": "Weiter",

@@ -118,6 +118,7 @@ function renderSchritt1(){
   setText('s1Hinweis', s.hinweis);
   setText('s1Anon', s.anonymitaets_hinweis);
   setText('s1MehrBtn', s.mehr_button);
+  state.menu_nr = null;
   setText('s1Ebene2Intro', s.ebene2_intro);
   setText('s1Ebene2Hinweis', s.ebene2_hinweis);
 
@@ -136,10 +137,10 @@ function renderSchritt1(){
 
 function listentryMarkup(t){
   if(t.typ === 'single'){
-    return rowMarkup(t, `data-nr="${t.menu_nr}"`);
+    return rowMarkup(t, `data-nr="${t.menu_nr}" aria-pressed="false"`);
   }
   // Auswahl-Kachel: zuerst nur ein Bild + Titel; die zwei Varianten erscheinen erst auf Klick
-  const opts = t.optionen.map(o => rowMarkup(o, `data-nr="${o.menu_nr}"`)).join('');
+  const opts = t.optionen.map(o => rowMarkup(o, `data-nr="${o.menu_nr}" aria-pressed="false"`)).join('');
   return `<div class="menu-group" data-group="${t.id}">
     <button class="menu-row menu-row--toggle" type="button" aria-expanded="false" aria-controls="grp-${t.id}">
       <img class="menu-thumb" src="${t.bild}" alt="">
@@ -157,7 +158,7 @@ function wireMenuList(container){
     btn.addEventListener('click', () => toggleGroup(btn));
   });
   container.querySelectorAll('.menu-row[data-nr]').forEach(btn => {
-    btn.addEventListener('click', () => chooseMenu(+btn.dataset.nr));
+    btn.addEventListener('click', () => markMenuRow(btn));
   });
 }
 
@@ -166,6 +167,25 @@ function toggleGroup(btn){
   const open = body.hidden;
   body.hidden = !open;
   btn.setAttribute('aria-expanded', String(open));
+}
+
+/* Anwählen markiert die Zeile und zeigt darunter den Bestätigungs-Button.
+   Erst dieser Button führt weiter — die Auswahl endet also nicht mit einem Tipp. */
+function markMenuRow(btn){
+  document.querySelectorAll('.menu-row[data-nr]').forEach(b => b.setAttribute('aria-pressed', 'false'));
+  btn.setAttribute('aria-pressed', 'true');
+
+  const alt = el('s1AuswahlBtn');
+  if(alt) alt.remove();
+
+  const name = btn.querySelector('.menu-row-name').textContent;
+  const weiter = document.createElement('button');
+  weiter.id = 's1AuswahlBtn';
+  weiter.type = 'button';
+  weiter.className = 'btn btn-primary btn-auswahl';
+  weiter.textContent = fill(DATA.schritt1.auswahl_button, { menu: name });
+  weiter.addEventListener('click', () => chooseMenu(+btn.dataset.nr));
+  btn.insertAdjacentElement('afterend', weiter);
 }
 
 function chooseMenu(nr){
@@ -304,7 +324,7 @@ function renderEmissionsarm(){
     : state.menu_nr;
   const pool = s.emissionsarm_pool.filter(m => m.menu_nr !== excl);
   const chosen = pickDiverse(pool, s.emissionsarm_anzahl || 5);
-  el('s3EmissionsarmListe').innerHTML = chosen.map(staticRowMarkup).join('');
+  el('s3EmissionsarmListe').innerHTML = chosen.map(m => staticRowMarkup(m)).join('');
 }
 
 // Menüs mit möglichst verschiedenen Herkünften (deterministisch, greedy)
@@ -486,7 +506,9 @@ function downloadReminder(){
    ============================================================ */
 function renderSchritt5(){
   const s = DATA.schritt5;
-  el('s5Kernsatz').innerHTML = s.kernsatz.map(p => `<p>${p}</p>`).join('');
+  const absaetze = list => list.map(p => `<p>${p}</p>`).join('');
+  el('s5Kernsatz').innerHTML =
+    `<div class="goodnews">${absaetze(s.kernsatz_box)}</div>` + absaetze(s.kernsatz_text);
   const b = el('s5WeiterBtn');
   b.textContent = s.weiter_button;
   b.href = s.weiter_link;      // Platzhalter, bis die Weiterleitung bekannt ist

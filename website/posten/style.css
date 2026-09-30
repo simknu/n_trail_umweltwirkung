@@ -38,10 +38,13 @@ html{font-size:16px}                 /* rem = 16 px fix; nur die Schrift skalier
 body{margin:0;font-family:var(--font);font-weight:400;font-size:var(--fs-base);
   line-height:1.4;color:var(--text);background:var(--bg)}
 
-/* Titel — Überschriften (gleiche Grösse wie Text, schwerer) */
-h1,h2,h3{margin:1.5rem 0 .75rem;font-family:var(--font);font-weight:700;
+/* Titel — Überschriften (gleiche Grösse wie Text, schwerer).
+   Der obere Abstand entspricht rund einer Leerzeile mehr als der Textabstand. */
+h1,h2,h3{margin:2.75rem 0 .75rem;font-family:var(--font);font-weight:700;
   font-size:var(--fs-base);line-height:1.3;color:#000}
-h3{margin:1.25rem 0 .5rem}
+h3{margin:2.25rem 0 .5rem}
+/* die erste Überschrift eines Abschnitts braucht den Vorlauf nicht */
+.step h2:first-child,.step h3:first-child{margin-top:1rem}
 p{margin:.75rem 0}
 strong,b{font-weight:700}
 a{color:var(--cta)}
@@ -121,6 +124,8 @@ li{margin:.35rem 0}
   border-radius:var(--radius);cursor:pointer;text-align:left;
   font-family:var(--font);font-weight:700;font-size:var(--fs-base);line-height:1.3;color:#000}
 .menu-row:hover,.menu-row:focus-visible{border-color:var(--brand)}
+.menu-row[aria-pressed="true"]{border-color:var(--cta);background:#EEF1E4}
+.btn-auswahl{margin:.25rem 0}                                 /* Bestätigung direkt unter der Zeile */
 .menu-thumb{flex:0 0 var(--thumb);width:var(--thumb);height:var(--thumb);
   border-radius:12px;object-fit:cover;background:var(--surface)}
 .menu-row-name{flex:1 1 auto}
@@ -167,7 +172,9 @@ li{margin:.35rem 0}
 .reveal{border-left:3px solid var(--border);padding:.25rem 0 .25rem 1rem;margin:.5rem 0 1rem}
 .reveal p:first-child{margin-top:0}
 .goodnews{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
-  padding:.85rem 1rem;margin:1rem 0;font-weight:700}
+  padding:.85rem 1rem;margin:2.5rem 0 1rem;font-weight:700}
+.goodnews p:first-child{margin-top:0}
+.goodnews p:last-child{margin-bottom:0}
 .reduktion{background:#EEF1E4;border:1px solid var(--border);border-radius:var(--radius);
   padding:.85rem 1rem;margin:1rem 0}
 
@@ -193,7 +200,6 @@ li{margin:.35rem 0}
 
 /* === Schritt 5 === */
 .kernsatz{margin:2rem 0}
-.kernsatz p:first-child,.kernsatz p:nth-child(2){font-weight:700}
 
 /* === steps === */
 .step{padding:1rem 0 1.5rem}
