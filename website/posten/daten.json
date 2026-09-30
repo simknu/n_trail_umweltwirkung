@@ -178,10 +178,10 @@
               "alternative": { "menu_nr": 12, "name": "Gemüse-Wähe", "bild": "images/12_Gemuesewaehe.png", "reduktion_prozent": 20, "artikel": "eine",
                 "variantentext": "Alternativ könntest du eine Gemüse-Wähe ausprobieren. Diese hat weniger Käse und Rahm, wird dadurch leichter und auch klimafreundlicher.",
                 "reduktion_satz": "Wenn du <strong>Gemüse-Wähe</strong> wählst, reduziert sich die Klimawirkung um <strong>20 %</strong> im Vergleich zur Käse-Zwiebel-Wähe." } },
-      "14": { "name": "Lasagne mit Fleisch", "modus": "vorschlag",
+      "14": { "name": "Lasagne mit Hackfleisch", "modus": "vorschlag",
               "alternative": { "menu_nr": 15, "name": "Vegetarische Lasagne", "bild": "images/15_Vegetarische_Lasagne.png", "reduktion_prozent": 50, "artikel": "eine",
                 "variantentext": "Probier mal eine Lasagne mit Linsen statt Hackfleisch. Schmeckt fast identisch und hat mehr Ballaststoffe, was gut für deine Gesundheit ist.<br>Wenn du nicht ganz auf Fleisch verzichten möchtest, kannst du auch eine Sauce mit halb Hackfleisch, halb Linsen ausprobieren.",
-                "reduktion_satz": "Wenn du <strong>Vegetarische Lasagne</strong> wählst, reduziert sich die Klimawirkung um <strong>50 %</strong> im Vergleich zur Lasagne mit Fleisch. Kleinere Änderungen (z. B. eine Sauce mit halb Hackfleisch, halb Linsen) reduzieren die Klimawirkung entsprechend weniger." } },
+                "reduktion_satz": "Wenn du <strong>Vegetarische Lasagne</strong> wählst, reduziert sich die Klimawirkung um <strong>50 %</strong> im Vergleich zur Lasagne mit Hackfleisch. Kleinere Änderungen (z. B. eine Sauce mit halb Hackfleisch, halb Linsen) reduzieren die Klimawirkung entsprechend weniger." } },
       "15": { "name": "Vegetarische Lasagne", "modus": "bestaetigung" },
       "16": { "name": "Sushi", "modus": "vorschlag",
               "alternative": { "menu_nr": 29, "name": "Vegetarisches Sushi", "bild": "images/29_Sushi_Vegetarisch.png", "reduktion_prozent": 30, "artikel": "",
@@ -196,11 +196,11 @@
               "alternative": { "menu_nr": 24, "name": "Palak Tofu", "bild": "images/24_Palak_Tofu.png", "reduktion_prozent": 65, "artikel": "",
                 "variantentext": "Spinat, Joghurt und Gemüse bleiben gleich, nur der Paneer wird durch Tofu ersetzt. Durch diese kleine Änderung kannst du die Klimawirkung des Menus spürbar verkleinern.",
                 "reduktion_satz": "Wenn du <strong>Palak Tofu</strong> wählst, reduziert sich die Klimawirkung um <strong>65 %</strong> im Vergleich zum Palak Paneer." } },
-      "20": { "name": "Pastetli mit Fleisch", "modus": "vorschlag",
-              "alternative": { "menu_nr": 21, "name": "Pastetli ohne Fleisch", "bild": "images/21_Pastetli_mit_Pilzsauce.png", "reduktion_prozent": 50, "artikel": "ein",
+      "20": { "name": "Pastetli mit Brätkügeli", "modus": "vorschlag",
+              "alternative": { "menu_nr": 21, "name": "Pastetli mit Pilzsauce", "bild": "images/21_Pastetli_mit_Pilzsauce.png", "reduktion_prozent": 50, "artikel": "ein",
                 "variantentext": "Probier mal eine Pastetli-Sauce ohne Fleisch. Es gibt auch Rezepte ohne Pilze, wenn du diese nicht magst.<br>Wenn du nicht ganz auf Fleisch verzichten magst, nimm ein Poulet-Ragout statt Brätkügeli. Dies hilft deiner Gesundheit und dem Klima.",
-                "reduktion_satz": "Wenn du <strong>Pastetli ohne Fleisch</strong> wählst, reduziert sich die Klimawirkung um <strong>50 %</strong> im Vergleich zum Pastetli mit Fleisch. Kleinere Änderungen (z. B. ein Poulet-Ragout statt Brätkügeli) reduzieren die Klimawirkung entsprechend weniger." } },
-      "21": { "name": "Pastetli ohne Fleisch", "modus": "bestaetigung" }
+                "reduktion_satz": "Wenn du <strong>Pastetli mit Pilzsauce</strong> wählst, reduziert sich die Klimawirkung um <strong>50 %</strong> im Vergleich zum Pastetli mit Brätkügeli. Kleinere Änderungen (z. B. ein Poulet-Ragout statt Brätkügeli) reduzieren die Klimawirkung entsprechend weniger." } },
+      "21": { "name": "Pastetli mit Pilzsauce", "modus": "bestaetigung" }
     },
 
     "emissionsarm_anzahl": 5,
