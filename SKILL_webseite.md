@@ -5,7 +5,8 @@ description: >
   sustainability-trail stations (n-trail.org): 320-px-first, single-column
   "Posten" pages with a full-bleed hero image, calm prose, captioned figures,
   quiet green buttons, a list-style picker with app-icon pictures, a
-  multiple-choice quiz, and a grey legal footer with the N-Trail logo. Produces self-contained vanilla HTML/CSS/JS (no framework, no
+  multiple-choice quiz, and a grey legal footer with the N-Trail logo.
+  Produces self-contained vanilla HTML/CSS/JS (no framework, no
   build) for static hosting. Trigger for any N-Trail / Klimaweg "Posten" or
   similar smartphone walking-trail station.
 ---
