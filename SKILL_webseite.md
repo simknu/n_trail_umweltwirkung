@@ -86,7 +86,8 @@ Top of `style.css`. Brand values fixed; `/* derived */` = tune to the live site.
   /* === derived (tune) === */
   --cta-hover:#3E5304; --text:#000; --muted:#6B6B6B; /* --muted: icons/hairlines ONLY, never readable copy */
   --bg:#FFFFFF; --surface:#F4F5EF; --border:#E3E3DD; --track:#EFF0EA;
-  --maxw:680px; --radius:6px; --space:1rem; --hdr-h:56px; --thumb:56px;
+  --maxw:680px; --radius:6px; --space:1rem; --hdr-h:56px;
+  --thumb:56px; --thumb-gross:min(168px, 45%);   /* list row / lead row picture */
 }
 *{box-sizing:border-box}
 html{font-size:16px}                 /* rem = 16 px fixed; only type scales, via --fs-* */
@@ -119,7 +120,7 @@ No other family — Fira Sans is not used.
 
 White sticky header (logo = Home · ☰ hamburger → Anleitung/FAQ/Karte) →
 full-bleed ~2:1 hero with the station title overlaid in white (Haupttitel,
-lower-left) → single column (`h2`, prose, figures with caption **only where a
+lower-left, flush with the text column and lifted off the bottom edge) → single column (`h2`, prose, figures with caption **only where a
 source requires it**, one green action) → grey footer panel (Impressum ·
 Datenschutz · © · N-Trail logo).
 An optional info-button + pop-up and a cookie banner may be added; omit the
@@ -161,7 +162,9 @@ heavy cards or shadows. **No grey bar under the hero, none above the footer.**
 </figure>
 
 <!-- menu list: one row per dish — app-icon-size picture left, name right.
-     A pair of variants stays collapsed to one picture + title and opens on tap. -->
+     A pair of variants stays collapsed to one picture + title and opens on tap.
+     .menu-row--gross is the same row with a ~3× picture, for the one suggestion
+     a screen leads with. -->
 <div class="menulist">                                      <!-- rows generated from data -->
   <button class="menu-row" type="button" data-nr="3">
     <img class="menu-thumb" src="images/3_x.png" alt="">
@@ -221,7 +224,9 @@ heavy cards or shadows. **No grey bar under the hero, none above the footer.**
 /* === hero (Haupttitel; no scrim, no grey bar) === */
 .hero{position:relative}
 .hero img{width:100%;aspect-ratio:766/379;object-fit:cover;display:block} /* ≈2:1, full-bleed */
-.hero-title{position:absolute;left:0;bottom:0;margin:0;padding:.35em .5em;
+/* left edge and width follow .container, so the title lines up with the copy below */
+.hero-title{position:absolute;left:0;right:0;bottom:1.25rem;margin:0 auto;
+  max-width:var(--maxw);padding:0 var(--space);
   color:#fff;font-family:var(--font);font-weight:900;font-size:var(--fs-hero);line-height:1.1;
   text-shadow:0 1px 3px rgba(0,0,0,.55)}  /* keeps the white title legible on light photos — a shadow, not a bar */
 
@@ -240,6 +245,8 @@ heavy cards or shadows. **No grey bar under the hero, none above the footer.**
 .menu-thumb{flex:0 0 var(--thumb);width:var(--thumb);height:var(--thumb);
   border-radius:12px;object-fit:cover;background:var(--surface)}  /* app-icon size (--thumb:56px) */
 .menu-row-name{flex:1 1 auto}
+.menu-row--gross .menu-thumb{flex-basis:var(--thumb-gross);width:var(--thumb-gross);
+  height:var(--thumb-gross);border-radius:16px}               /* lead suggestion, name still right */
 .menu-group{border:1px solid var(--border);border-radius:var(--radius);background:var(--surface)}
 .menu-group > .menu-row{background:transparent;border:0;border-radius:var(--radius)}
 .menu-row--toggle::after{flex:0 0 auto;color:var(--muted);font-size:1.1rem;line-height:1}
@@ -257,6 +264,9 @@ heavy cards or shadows. **No grey bar under the hero, none above the footer.**
   font-family:var(--font);font-weight:700;font-size:var(--fs-base);line-height:1.2}
 .btn-primary{background:var(--cta);color:#fff;margin:1.5rem 0}
 .btn-primary:hover,.btn-primary:focus-visible{background:var(--cta-hover)}
+/* a link inside running text that opens a reveal — reads as a link, not a button */
+.link-inline{background:none;border:0;padding:0;margin:0;cursor:pointer;color:var(--cta);
+  text-decoration:underline;font:inherit}
 .answers{display:flex;flex-direction:column;gap:.75rem}
 .btn-answer{background:var(--surface);color:#000;border-color:var(--border);font-weight:400;text-align:left}
 .btn-answer:hover,.btn-answer:focus-visible{border-color:var(--brand)}
@@ -350,6 +360,19 @@ function downloadIcs(titel,beschreibung,start){
 .bar-label{font-weight:700;color:#000}                        /* Titel weight */
 .bar-fill{height:1.5rem;border-radius:var(--radius);background:var(--brand);transition:width .6s ease}
 @media(prefers-reduced-motion:reduce){.bar-fill{transition:none}}
+
+/* === copyable preview box (reminder text) === */
+/* <div class="ics-box"><button class="ics-copy">…svg…</button><pre class="ics-preview">…</pre></div> */
+.ics-box{position:relative;margin:.5rem 0}
+.ics-preview{margin:0;padding:.85rem 3rem .85rem 1rem;background:var(--surface);  /* right padding frees the icon */
+  border:1px solid var(--border);border-radius:var(--radius);
+  font-family:var(--font);font-weight:400;font-size:var(--fs-base);line-height:1.4;color:#000;
+  white-space:pre-wrap;overflow-wrap:anywhere}
+.ics-copy{position:absolute;top:.35rem;right:.35rem;width:40px;height:40px;padding:8px;
+  border:0;border-radius:var(--radius);background:transparent;cursor:pointer;color:var(--cta)}
+.ics-copy:hover,.ics-copy:focus-visible{background:rgba(0,0,0,.06)}
+.ics-copy svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:2;
+  stroke-linecap:round;stroke-linejoin:round}
 ```
 
 `daten.json` shape (everything editable without touching code):
@@ -364,9 +387,11 @@ function downloadIcs(titel,beschreibung,start){
 The reminder date is user-choosable via a date/time input; **default the `start`
 to one week ahead, editable by the person** (pass the chosen `Date` into
 `buildIcs(titel,beschreibung,start)`). Show the same wording the `.ics` carries
-as a **preview the person can copy** (title, date, sentence) with a "Text
-kopieren" button — `navigator.clipboard.writeText` with a hidden-textarea
-fallback — so a failed import is no dead end. The `.ics` download also needs its
+as a **preview the person can copy** (title, date, sentence) in a `.ics-box`
+whose copy icon sits in its top right corner — `navigator.clipboard.writeText`
+with a hidden-textarea fallback, and a `role="status"` line for the result — so a
+failed import is no dead end. The icon replaces a separate copy button: it keeps
+the action on the thing it acts on and saves a competing button. The `.ics` download also needs its
 plain-text fallback line ("Funktioniert das nicht? Füge dir die Erinnerung selbst
 im Kalender hinzu.") — behaviour varies by device (iOS usually opens Calendar
 import; some Android browsers just save the file). Test on real iOS/Android.
