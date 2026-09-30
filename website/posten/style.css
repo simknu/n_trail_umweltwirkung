@@ -1,17 +1,16 @@
 /* ============================================================
    Posten «Was kommt auf deinen Teller?» — Look
-   Aufbau nach SKILL_webseite.md: 320-px-Basis, vier Textstile,
-   eine grüne Aktion pro Screen, keine grauen Balken.
+   Aufbau nach SKILL_webseite.md: 320-px-Basis, eine grüne Aktion pro Screen,
+   keine grauen Balken. Textstile: Haupttitel, Titel, Text, Impressum und
+   zusätzlich «Hinweis» (Lato Regular 13/1.2) für Datenhinweise und
+   Bildunterschriften.
    ============================================================ */
 
 /* === fonts (self-hosted in css/) === */
 @font-face{font-family:'Lato';font-style:normal;font-weight:400;font-display:swap;
   src:url('css/Lato-Regular.woff2') format('woff2'),url('css/Lato-Regular.woff') format('woff')}
-/* 700 = Lato Bold (Titel). Die Bold-Dateien sind noch nicht geliefert, darum zeigt
-   Gewicht 700 vorerst Lato Black. Sobald Lato-Bold.woff2/.woff in css/ liegen, hier
-   die beiden Zeilen auf Lato-Bold umstellen (siehe css/LIESMICH.txt). */
 @font-face{font-family:'Lato';font-style:normal;font-weight:700;font-display:swap;
-  src:url('css/Lato-Black.woff2') format('woff2'),url('css/Lato-Black.woff') format('woff')}
+  src:url('css/Lato-Bold.woff2') format('woff2'),url('css/Lato-Bold.woff') format('woff')}
 @font-face{font-family:'Lato';font-style:normal;font-weight:900;font-display:swap;
   src:url('css/Lato-Black.woff2') format('woff2'),url('css/Lato-Black.woff') format('woff')}
 
@@ -25,6 +24,7 @@
   /* type: gentle fluid scale, 320-px-Basis → gekappt bei 768 px (×1.25) */
   --fs-hero:clamp(26px, calc(26px + 6.5 * (100vw - 320px) / 448), 32.5px); /* Haupttitel 26→32.5 */
   --fs-base:clamp(16px, calc(16px + 4   * (100vw - 320px) / 448), 20px);   /* Titel/Text/Impressum 16→20 */
+  --fs-hinweis:clamp(13px, calc(13px + 3.25 * (100vw - 320px) / 448), 16.25px); /* Hinweis 13→16.25 */
   /* derived */
   --cta-hover:#3E5304; --text:#000; --muted:#6B6B6B;  /* --muted nur Icons/Haarlinien, nie Lesetext */
   --bg:#FFFFFF; --surface:#F4F5EF; --border:#E3E3DD; --track:#EFF0EA;
@@ -47,6 +47,11 @@ a{color:var(--cta)}
 img{max-width:100%;height:auto;display:block}
 ul,ol{margin:.75rem 0;padding-left:1.4rem}
 li{margin:.35rem 0}
+/* Hinweis — Datenhinweise und Bildunterschriften (Lato Regular, 13, Zeilenhöhe 1.2) */
+.hinweis,.fig figcaption{font-family:var(--font);font-weight:400;font-size:var(--fs-hinweis);
+  line-height:1.2;color:#000}
+.hinweis p{margin:.5rem 0}
+
 .container{max-width:var(--maxw);margin:0 auto;padding:0 var(--space)}
 :focus-visible{outline:3px solid var(--brand);outline-offset:2px}
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
@@ -72,6 +77,12 @@ li{margin:.35rem 0}
 .hero-title{position:absolute;left:0;bottom:0;margin:0;padding:.35em .5em;
   color:#fff;font-family:var(--font);font-weight:900;font-size:var(--fs-hero);line-height:1.1;
   text-shadow:0 1px 3px rgba(0,0,0,.55)}
+
+/* === figure (Bild mit Bildunterschrift; Credit nur wo eine Quelle ihn verlangt) === */
+.fig{margin:1.5rem 0}
+.fig img{border-radius:var(--radius)}
+.fig figcaption{margin-top:.5rem}
+.credit{display:block;margin-top:.15rem}
 
 /* === Menu-Karte (Variantenvorschlag Schritt 3) === */
 .menu-card{margin:1.25rem 0;background:var(--surface);border:1px solid var(--border);

@@ -42,11 +42,11 @@
       <div id="s1Ebene2Wrap" hidden>
         <h2 id="s1Ebene2Intro"></h2>
         <div id="s1Ebene2" class="menulist"></div>
-        <p id="s1Ebene2Hinweis"></p>
+        <p class="hinweis" id="s1Ebene2Hinweis"></p>
       </div>
 
-      <p id="s1Hinweis"></p>
-      <p id="s1Anon"></p>
+      <p class="hinweis" id="s1Hinweis"></p>
+      <p class="hinweis" id="s1Anon"></p>
     </section>
 
     <!-- ========== Schritt 2 – Schätzen, dann auflösen ========== -->
@@ -62,7 +62,7 @@
         <p class="axis axis-bottom" id="s2AxisBottom"></p>
 
         <button class="btn btn-primary" id="s2AufloesenBtn" type="button"></button>
-        <p id="s2AufloesenHinweis"></p>
+        <p class="hinweis" id="s2AufloesenHinweis"></p>
       </div>
 
       <!-- 2b: Auflösung -->
@@ -72,7 +72,7 @@
 
         <h2 id="s2TatTitel"></h2>
         <div id="s2Bars" class="bars"></div>
-        <p id="s2EaternityHinweis"></p>
+        <p class="hinweis" id="s2EaternityHinweis"></p>
 
         <h2 id="s2UeTitel"></h2>
         <p id="s2UeIntro"></p>
@@ -129,9 +129,9 @@
 
       <!-- Berechnungs-Hinweis (nur 3a) + Weiter -->
       <div id="s3aBerechnung" hidden>
-        <p id="s3aBerechnungHinweis"></p>
+        <p class="hinweis" id="s3aBerechnungHinweis"></p>
         <button class="btn btn-link" id="s3aBerechnungBtn" type="button"></button>
-        <div id="s3aBerechnungWrap" class="reveal" hidden></div>
+        <div id="s3aBerechnungWrap" class="reveal hinweis" hidden></div>
       </div>
 
       <button class="btn btn-primary" id="s3WeiterBtn" type="button"></button>
@@ -162,18 +162,18 @@
 
         <div class="reminder">
           <h3 id="s4ErinnerungFrage"></h3>
-          <p id="s4ErinnerungHinweis"></p>
+          <p class="hinweis" id="s4ErinnerungHinweis"></p>
           <label class="date-label" id="s4DatumLabel" for="s4Datum"></label>
           <input type="datetime-local" id="s4Datum" class="date-input">
 
           <h3 id="s4VorschauTitel"></h3>
-          <p id="s4VorschauHinweis"></p>
+          <p class="hinweis" id="s4VorschauHinweis"></p>
           <pre class="ics-preview" id="s4Vorschau" tabindex="0"></pre>
           <button class="btn btn-secondary" id="s4KopierenBtn" type="button"></button>
-          <p id="s4KopierStatus" role="status" hidden></p>
+          <p class="hinweis" id="s4KopierStatus" role="status" hidden></p>
 
           <button class="btn btn-secondary" id="s4ErinnerungJaBtn" type="button"></button>
-          <p id="s4ErinnerungFallback"></p>
+          <p class="hinweis" id="s4ErinnerungFallback"></p>
         </div>
 
         <button class="btn btn-primary" id="s4WeiterBtn" type="button"></button>

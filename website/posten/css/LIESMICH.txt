@@ -1,23 +1,19 @@
 Schriften (Self-Hosting)
 ========================
 
-In diesem Ordner (css/) liegen die selbst gehosteten Lato-Schnitte:
+In diesem Ordner (css/) liegen die selbst gehosteten Lato-Schnitte. Die Seite
+bindet über ../style.css genau diese drei Gewichte ein:
 
-  Lato-Regular.woff2 / .woff   Lato 400 — Textstil «Text» (Fliesstext, Footer ©)
-  Lato-Black.woff2   / .woff   Lato 900 — Textstil «Haupttitel» und «Impressum»
+  Lato-Regular.woff2 / .woff   Lato 400 — Textstile «Text» und «Hinweis»
+  Lato-Bold.woff2    / .woff   Lato 700 — Textstil «Titel» (h1/h2/h3, Buttons, Menü)
+  Lato-Black.woff2   / .woff   Lato 900 — Textstile «Haupttitel» und «Impressum»
 
-Noch nicht geliefert:
-
-  Lato-Bold.woff2    / .woff   Lato 700 — Textstil «Titel» (h1/h2/h3, Buttons)
-
-Solange die Bold-Dateien fehlen, bildet ../style.css das Gewicht 700 auf die
-Black-Dateien ab. Sobald Lato-Bold.woff2/.woff hier liegen, in ../style.css die
-@font-face-Regel für font-weight:700 auf diese Dateien umstellen (die Stelle ist
-dort kommentiert). Sonst ist nichts anzupassen.
+Ebenfalls im Ordner, aber aktuell nicht eingebunden (kein Gestaltungselement
+der Seite verwendet sie): Lato-Light, Lato-Hairline, Lato-Italic. Sie können
+liegen bleiben oder vor dem Hochladen gelöscht werden — sie werden nie geladen.
 
 Bezugsquelle: Lato ist unter der SIL Open Font License frei verfügbar
-(z. B. Google Fonts → "Download family"). Die .ttf danach in .woff2/.woff
-umwandeln (z. B. mit einem woff2-Konverter) und hier ablegen.
+(z. B. Google Fonts → "Download family").
 
 Fira Sans wird NICHT benötigt (war nur für den Info-Button gedacht, der
 in diesem Posten entfällt).
