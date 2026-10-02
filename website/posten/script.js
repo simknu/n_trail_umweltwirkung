@@ -252,7 +252,7 @@ function buildSchritt2(){
 
 function showAufloesung(){
   const s = DATA.schritt2;
-  // eigene gezogene Reihenfolge (oben = hoch) aus dem DOM lesen
+  // eigene gezogene Reihenfolge (oben = wenig, wie in der Auflösung) aus dem DOM lesen
   const order = [...el('sortlist').querySelectorAll('li')].map(li => li.dataset.name);
   el('s2DeineReihenfolge').innerHTML = order.map(n => `<li>${n}</li>`).join('');
 
