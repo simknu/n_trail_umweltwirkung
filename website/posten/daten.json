@@ -104,13 +104,13 @@
       "wieso_button": "Wieso ist das so?",
       "wieso_intro": "Rindfleisch verursacht im globalen Durchschnitt schätzungsweise vier- bis neunmal mehr Treibhausgasemissionen als Poulet pro Kilogramm Protein. Der genaue Faktor hängt stark von Produktionsweise, Herdentyp und Region ab. Drei Hauptgründe:",
       "wieso_punkte": [
-        "Rinder sind Wiederkäuer: Im Pansen entsteht durch Mikroorganismen Methan, ein Treibhausgas mit rund 28-facher Wirkung von CO₂. Poulets haben kein Vormagensystem und emittieren praktisch kein Verdauungsmethan.",
-        "Poulets verwerten Futter deutlich effizienter und schneller. Hühner leben vor der Schlachtung im Schnitt nur wenige Wochen, Rinder 18–24 Monate. Je nach Rasse, Mast- oder Weidehaltung variiert das spürbar.",
-        "Rinder benötigen über Weideflächen und Kraftfutteranbau deutlich mehr Land als Hühner. Auch das hängt stark von der Produktionsweise ab."
+        "Rinder sind Wiederkäuer: Bei der Verdauung im Pansen entsteht Methan, das als Treibhausgas rund 28-mal stärker wirkt als CO₂. Hühner haben kein solches Verdauungssystem und stossen praktisch kein Methan aus.",
+        "Hühner wachsen viel schneller und brauchen weniger Futter für jedes Kilo Fleisch. Sie sind schon nach wenigen Wochen schlachtreif, Rinder erst nach eineinhalb bis zwei Jahren. Wie gross der Unterschied genau ist, hängt aber von der Rasse und der Haltung ab.",
+        "Rinder benötigen für ihre Ernährung (für Weiden und den Anbau von Futter) deutlich mehr Land als Hühner. Auch hier hängt der genaue Unterschied von der Haltungsform ab."
       ],
       "punkt2_titel": "2. Die Käseproduktion ist klimaintensiv.",
       "punkt2_text": "Hartkäse ist klimaintensiv, weil für ein Kilogramm rund 10–13 Liter Milch nötig sind. Die Emissionen der Milchproduktion — vor allem Methan aus der Verdauung der Kühe — summieren sich dadurch stark.",
-      "gute_nachricht_titel": "💚 Die gute Nachricht zum Schluss:",
+      "gute_nachricht_titel": "💚 Die gute Nachricht:",
       "gute_nachricht_text": "Was dem Klima hilft, ist oft auch das, was deiner Gesundheit langfristig guttut. Du tauschst in der Regel nicht das eine gegen das andere.",
       "weiter_button": "Weiter"
     }
@@ -121,8 +121,7 @@
     "rahmen_3a_intro": "Mit einer kleinen Änderung kannst du die Klimawirkung in Zukunft reduzieren.",
     "waehle_satz": "Wähle das nächste Mal",
     "vorschlag_hinweis": [
-      "Das ist ein Vorschlag fürs nächste Mal.",
-      "Wenn du das gewählte Menu nicht selber kochst und nicht einzelne Zutaten austauschen kannst, findest du unten weitere emissionsarme Menus zum Ausprobieren."
+      "Möchtest du weitere Ideen für klimafreundliche Menüs?"
     ],
     "berechnung_hinweis": "Die Werte der Menus wurden mit {eaternity} berechnet. Wenn du mehr zur Berechnung der Werte wissen willst, {klick}.",
     "berechnung_link_text": "klicke hier",
