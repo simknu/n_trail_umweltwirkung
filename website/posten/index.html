@@ -106,17 +106,19 @@
 
         <p class="reduktion" id="s3aReduktionSatz"></p>
 
-        <div id="s3aVorschlagHinweis"></div>
+        <div id="s3aVorschlagHinweis" class="abstand-oben"></div>
       </div>
 
       <!-- 3b: Bestätigung -->
       <div id="s3b" hidden>
         <h2 id="s3bTitel"></h2>
+        <div id="s3bGewaehltZeile" class="menulist menulist--static"></div>
         <p id="s3bText"></p>
       </div>
 
       <!-- gemeinsam: Emissionsarme Menus -->
-      <button class="btn btn-secondary" id="s3EmissionsarmBtn" type="button"></button>
+      <button class="btn btn-secondary btn-toggle" id="s3EmissionsarmBtn" type="button"
+              aria-expanded="false" aria-controls="s3EmissionsarmWrap"></button>
       <div id="s3EmissionsarmWrap" hidden>
         <div id="s3EmissionsarmListe" class="menulist menulist--static"></div>
       </div>
