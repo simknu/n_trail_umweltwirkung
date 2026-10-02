@@ -3,6 +3,7 @@
     "titel": "Was kommt auf deinen Teller?",
     "hero_titel": "Was kommt auf deinen Teller?",
     "hero_bild": "images/hero.png",
+    "weiter_link": "https://n-trail.org/Basel/naechster-posten.html",
     "eaternity_url": "https://eaternity.org",
     "eaternity_label": "eaternity",
     "footer_copy": "Dialog N & PUNK",
@@ -135,8 +136,7 @@
     ],
     "rahmen_3b_titel": "Gute Wahl.",
     "rahmen_3b_text": "Dein gewähltes Menu — <strong>{gericht}</strong> — gehört ohnehin schon zu den emissionsarmen. Hier gibt es nichts zu tauschen. Wenn du magst, findest du unten weitere emissionsarme Menus zum Ausprobieren.",
-    "emissionsarm_button": "Emissionsarme Menus",
-    "emissionsarm_titel": "Emissionsarme Menus zum Ausprobieren",
+    "emissionsarm_button": "Ja, weitere klimafreundliche Menus",
     "weiter_button": "Weiter",
 
     "menus": {
@@ -250,17 +250,5 @@
       "dauer_minuten": 15
     },
     "weiter_button": "Weiter"
-  },
-
-  "schritt5": {
-    "kernsatz_box": [
-      "Wenn du eine Sache ändern möchtest: Verzichte hin und wieder auf Fleisch.",
-      "Wenn du dich bereits vegetarisch ernährst, probier auch einmal die vegane Option."
-    ],
-    "kernsatz_text": [
-      "Das ist der Tausch mit dem grössten Effekt — fürs Klima und für deine Gesundheit."
-    ],
-    "weiter_button": "Weiter",
-    "weiter_link": "https://n-trail.org/Basel/naechster-posten.html"
   }
 }

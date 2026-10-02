@@ -20,5 +20,5 @@ werden (nicht per Doppelklick auf `index.html`):
 
 - Endgültiger URL-Pfad auf Cyon.
 - Weiterleitung nach dem letzten «Weiter» (aktuell ein Platzhalter in
-  `daten.json → schritt5.weiter_link`).
+  `daten.json → meta.weiter_link`).
 - Schriftdatei `Lato-Bold` (Gewicht 700) — siehe `website/posten/css/LIESMICH.txt`.

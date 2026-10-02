@@ -98,6 +98,18 @@ function rowMarkup(m, attrs){
     </button>`;
 }
 
+/* Bild zu einer Menu-Nummer — die Bilder stehen bei den Einträgen von Schritt 1
+   (Einzelmenu oder Variante einer Auswahl-Kachel), darum von dort nachschlagen. */
+function menuBild(nr){
+  const s1 = DATA.schritt1;
+  for(const t of [...s1.ebene1, ...s1.ebene2]){
+    if(t.typ === 'single'){ if(t.menu_nr === nr) return t.bild; continue; }
+    const o = t.optionen.find(o => o.menu_nr === nr);
+    if(o) return o.bild;
+  }
+  return '';
+}
+
 /* reine Anzeige-Zeile (kein Klick): Vorschlagslisten.
    gross = Variantenvorschlag in Schritt 3a (Bild ca. dreifach) */
 function staticRowMarkup(m, gross){
@@ -279,6 +291,9 @@ function prepSchritt3(){
   if(is3a){
     const a = menu.alternative;
     setText('s3aTitel', fill(s.rahmen_3a_titel, { gericht: state.menu_name }));
+    // gewähltes Menu nochmals zeigen — gleiche Grösse wie in der Auswahl, ohne Rahmen
+    el('s3aGewaehltZeile').innerHTML =
+      staticRowMarkup({ name: state.menu_name, bild: menuBild(state.menu_nr) });
     setText('s3aIntro', s.rahmen_3a_intro);
     // "Wähle das nächste Mal [Artikel]" — Artikel je Alternative, leer wo keiner passt
     setText('s3aWaehleSatz', [s.waehle_satz, a.artikel].filter(Boolean).join(' '));
@@ -300,7 +315,6 @@ function prepSchritt3(){
 
   // Emissionsarme Menus (gemeinsam)
   setText('s3EmissionsarmBtn', s.emissionsarm_button);
-  setText('s3EmissionsarmTitel', s.emissionsarm_titel);
   el('s3EmissionsarmWrap').hidden = true;
   el('s3EmissionsarmBtn').hidden = false;
   el('s3EmissionsarmBtn').onclick = () => {
@@ -309,11 +323,11 @@ function prepSchritt3(){
     el('s3EmissionsarmBtn').hidden = true;
   };
 
-  // Weiter: 3b überspringt Schritt 4 → direkt Schritt 5
+  // Weiter: 3b hat keinen Vorsatz → Schritt 4 entfällt, es geht direkt weiter
   setText('s3WeiterBtn', s.weiter_button);
   el('s3WeiterBtn').onclick = () => {
     if(is3a){ prepSchritt4(); showStep(4); }
-    else { renderSchritt5(); showStep(5); }
+    else { weiter(); }
   };
 }
 
@@ -378,10 +392,10 @@ function prepSchritt4(){
   el('s4Datum').oninput = updateVorschau;
 
   el('s4JaBtn').onclick = () => { el('s4a').hidden = true; el('s4b').hidden = false; window.scrollTo({top:0}); };
-  el('s4SkipBtn').onclick = () => { renderSchritt5(); showStep(5); };
+  el('s4SkipBtn').onclick = () => weiter();
   el('s4KopierenBtn').onclick = copyErinnerung;
   el('s4ErinnerungJaBtn').onclick = downloadReminder;
-  el('s4WeiterBtn').onclick = () => { renderSchritt5(); showStep(5); };
+  el('s4WeiterBtn').onclick = () => weiter();
 }
 
 function selectAusloeser(btn, ausloeser){
@@ -502,16 +516,11 @@ function downloadReminder(){
 }
 
 /* ============================================================
-   Schritt 5 — Satz zum Mitnehmen
+   Abschluss — Weiterleitung zum nächsten Posten
+   (daten.json → meta.weiter_link; Platzhalter, bis das Ziel bekannt ist)
    ============================================================ */
-function renderSchritt5(){
-  const s = DATA.schritt5;
-  const absaetze = list => list.map(p => `<p>${p}</p>`).join('');
-  el('s5Kernsatz').innerHTML =
-    `<div class="goodnews">${absaetze(s.kernsatz_box)}</div>` + absaetze(s.kernsatz_text);
-  const b = el('s5WeiterBtn');
-  b.textContent = s.weiter_button;
-  b.href = s.weiter_link;      // Platzhalter, bis die Weiterleitung bekannt ist
+function weiter(){
+  window.location.href = DATA.meta.weiter_link;
 }
 
 /* ---- gemeinsame Helfer ---- */

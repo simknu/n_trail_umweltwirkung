@@ -142,9 +142,10 @@ li{margin:.35rem 0}
 .menu-row--gross .menu-thumb{flex-basis:var(--thumb-gross);width:var(--thumb-gross);
   height:var(--thumb-gross);border-radius:16px}
 
-/* nicht anklickbare Liste (Vorschläge, reine Anzeige) */
-.menulist--static .menu-row{cursor:default}
-.menulist--static .menu-row:hover{border-color:var(--border)}
+/* nicht anklickbare Liste (reine Anzeige): kein Rahmen — der Rahmen markiert
+   ausschliesslich klickbare Zeilen. Links bündig zum Lesetext. */
+.menulist--static .menu-row{cursor:default;border-color:transparent;padding-left:0;padding-right:0}
+.menulist--static .menu-row:hover{border-color:transparent}
 
 /* === Schritt 2: Sortierliste + Balken === */
 .axis{margin:.35rem 0;font-weight:700}
@@ -175,8 +176,9 @@ li{margin:.35rem 0}
   padding:.85rem 1rem;margin:2.5rem 0 1rem;font-weight:700}
 .goodnews p:first-child{margin-top:0}
 .goodnews p:last-child{margin-bottom:0}
+/* Abstand nach oben wie bei .goodnews: rund eine Leerzeile mehr als der Textabstand */
 .reduktion{background:#EEF1E4;border:1px solid var(--border);border-radius:var(--radius);
-  padding:.85rem 1rem;margin:1rem 0}
+  padding:.85rem 1rem;margin:2.5rem 0 1rem}
 
 /* === Schritt 4: Plan / Erinnerung === */
 .plan-label{font-weight:700;margin:1rem 0 .25rem}
@@ -197,9 +199,6 @@ li{margin:.35rem 0}
 .ics-copy:hover,.ics-copy:focus-visible{background:rgba(0,0,0,.06)}
 .ics-copy svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:2;
   stroke-linecap:round;stroke-linejoin:round}
-
-/* === Schritt 5 === */
-.kernsatz{margin:2rem 0}
 
 /* === steps === */
 .step{padding:1rem 0 1.5rem}
