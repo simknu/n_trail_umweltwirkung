@@ -143,7 +143,7 @@
       "1":  { "name": "Pizza Margherita", "modus": "bestaetigung" },
       "2":  { "name": "Pizza Prosciutto", "modus": "vorschlag",
               "alternative": { "menu_nr": 1, "name": "Pizza Margherita", "bild": "images/1_Pizza_Margherita.png", "reduktion_prozent": 30, "artikel": "eine",
-                "variantentext": "Bestelle oder backe ab und zu eine vegetarische Pizza. Du hast viele Möglichkeiten: zum Beispiel Pizza verdura, Pizza rucola oder auch Pizza margherita. Damit tust du dem Klima und deiner Gesundheit etwas Gutes.",
+                "variantentext": "Bestelle oder backe ab und zu eine vegetarische Pizza.<br> Es muss nicht Margherita sein. Meist hast du verschiedene vegetarische Pizzen zur Auswahl (z.B. Pizza verdura oder Pizza rucola). Damit tust du dem Klima und deiner Gesundheit etwas Gutes.",
                 "reduktion_satz": "Wenn du <strong>Pizza Margherita</strong> wählst, reduziert sich die Klimawirkung um <strong>30 %</strong> im Vergleich zur Pizza Prosciutto." } },
       "3":  { "name": "Schnitzel mit Pommes", "modus": "vorschlag",
               "alternative": { "menu_nr": 26, "name": "Vegetarisches Schnitzel mit Pommes", "bild": "images/26_Schnitzel_Vegetarisch.png", "reduktion_prozent": 65, "artikel": "ein",
