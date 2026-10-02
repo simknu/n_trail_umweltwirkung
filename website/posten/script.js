@@ -291,9 +291,8 @@ function prepSchritt3(){
   if(is3a){
     const a = menu.alternative;
     setText('s3aTitel', fill(s.rahmen_3a_titel, { gericht: state.menu_name }));
-    // gewähltes Menu nochmals zeigen — gleiche Grösse wie in der Auswahl, ohne Rahmen
-    el('s3aGewaehltZeile').innerHTML =
-      staticRowMarkup({ name: state.menu_name, bild: menuBild(state.menu_nr) });
+    // gewähltes Menu nochmals zeigen — gleich gross wie der Variantenvorschlag, ohne Rahmen
+    el('s3aGewaehltZeile').innerHTML = gewaehltesMenuMarkup();
     setText('s3aIntro', s.rahmen_3a_intro);
     // "Wähle das nächste Mal [Artikel]" — Artikel je Alternative, leer wo keiner passt
     setText('s3aWaehleSatz', [s.waehle_satz, a.artikel].filter(Boolean).join(' '));
@@ -310,17 +309,20 @@ function prepSchritt3(){
     el('s3aBerechnungBtn').onclick = () => toggleReveal('s3aBerechnungWrap');
   } else {
     setText('s3bTitel', s.rahmen_3b_titel);
+    el('s3bGewaehltZeile').innerHTML = gewaehltesMenuMarkup();
     setHtml('s3bText', fill(s.rahmen_3b_text, { gericht: state.menu_name }));
   }
 
-  // Emissionsarme Menus (gemeinsam)
+  // Emissionsarme Menus (gemeinsam) — Button klappt die Liste auf und wieder zu
   setText('s3EmissionsarmBtn', s.emissionsarm_button);
   el('s3EmissionsarmWrap').hidden = true;
-  el('s3EmissionsarmBtn').hidden = false;
+  el('s3EmissionsarmBtn').setAttribute('aria-expanded', 'false');
   el('s3EmissionsarmBtn').onclick = () => {
-    renderEmissionsarm();
-    el('s3EmissionsarmWrap').hidden = false;
-    el('s3EmissionsarmBtn').hidden = true;
+    const btn = el('s3EmissionsarmBtn');
+    const offen = btn.getAttribute('aria-expanded') === 'true';
+    if(!offen) renderEmissionsarm();
+    el('s3EmissionsarmWrap').hidden = offen;
+    btn.setAttribute('aria-expanded', String(!offen));
   };
 
   // Weiter: 3b hat keinen Vorsatz → Schritt 4 entfällt, es geht direkt weiter
@@ -329,6 +331,11 @@ function prepSchritt3(){
     if(is3a){ prepSchritt4(); showStep(4); }
     else { weiter(); }
   };
+}
+
+/* gewähltes Menu als rahmenlose Zeile — gleiche Grösse wie der Variantenvorschlag */
+function gewaehltesMenuMarkup(){
+  return staticRowMarkup({ name: state.menu_name, bild: menuBild(state.menu_nr) }, true);
 }
 
 function renderEmissionsarm(){
