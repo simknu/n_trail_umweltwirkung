@@ -137,6 +137,7 @@
     "rahmen_3b_titel": "Gute Wahl.",
     "rahmen_3b_text": "Dein gewähltes Menu — <strong>{gericht}</strong> — gehört ohnehin schon zu den emissionsarmen. Hier gibt es nichts zu tauschen. Wenn du magst, findest du unten weitere emissionsarme Menus zum Ausprobieren.",
     "emissionsarm_button": "Ja, weitere klimafreundliche Menus",
+    "emissionsarm_button_offen": "Menus ausblenden",
     "weiter_button": "Weiter",
 
     "menus": {

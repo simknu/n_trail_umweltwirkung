@@ -314,16 +314,16 @@ function prepSchritt3(){
   }
 
   // Emissionsarme Menus (gemeinsam) — Button klappt die Liste auf und wieder zu
-  setText('s3EmissionsarmBtn', s.emissionsarm_button);
-  el('s3EmissionsarmWrap').hidden = true;
-  el('s3EmissionsarmBtn').setAttribute('aria-expanded', 'false');
-  el('s3EmissionsarmBtn').onclick = () => {
-    const btn = el('s3EmissionsarmBtn');
-    const offen = btn.getAttribute('aria-expanded') === 'true';
-    if(!offen) renderEmissionsarm();
-    el('s3EmissionsarmWrap').hidden = offen;
-    btn.setAttribute('aria-expanded', String(!offen));
+  // und beschriftet sich je nach Zustand
+  const emiBtn = el('s3EmissionsarmBtn');
+  const emiZeige = offen => {
+    if(offen) renderEmissionsarm();
+    el('s3EmissionsarmWrap').hidden = !offen;
+    emiBtn.setAttribute('aria-expanded', String(offen));
+    emiBtn.textContent = offen ? s.emissionsarm_button_offen : s.emissionsarm_button;
   };
+  emiZeige(false);
+  emiBtn.onclick = () => emiZeige(emiBtn.getAttribute('aria-expanded') !== 'true');
 
   // Weiter: 3b hat keinen Vorsatz → Schritt 4 entfällt, es geht direkt weiter
   setText('s3WeiterBtn', s.weiter_button);
