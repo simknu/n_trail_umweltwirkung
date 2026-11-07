@@ -5,12 +5,12 @@ In diesem Ordner (css/) liegen die selbst gehosteten Lato-Schnitte. Die Seite
 bindet über ../style.css genau diese drei Gewichte ein:
 
   Lato-Regular.woff2 / .woff   Lato 400 — Textstile «Text» und «Hinweis»
-  Lato-Bold.woff2    / .woff   Lato 700 — Textstil «Titel» (h1/h2/h3, Buttons, Menü)
+  Lato-Bold.woff2    / .woff   Lato 700 — Textstil «Titel» (h1/h2/h3, Buttons)
   Lato-Black.woff2   / .woff   Lato 900 — Textstile «Haupttitel» und «Impressum»
 
-Ebenfalls im Ordner, aber aktuell nicht eingebunden (kein Gestaltungselement
-der Seite verwendet sie): Lato-Light, Lato-Hairline, Lato-Italic. Sie können
-liegen bleiben oder vor dem Hochladen gelöscht werden — sie werden nie geladen.
+Andere Schnitte liegen bewusst nicht im Ordner: Lato-Light, Lato-Hairline und
+Lato-Italic wurden entfernt, weil kein Gestaltungselement der Seite sie nutzt
+und sie darum nie geladen wurden.
 
 Bezugsquelle: Lato ist unter der SIL Open Font License frei verfügbar
 (z. B. Google Fonts → "Download family").
