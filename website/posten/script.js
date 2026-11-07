@@ -24,7 +24,6 @@ async function boot(){
   fillChrome();
   renderSchritt1();
   buildSchritt2();
-  bindHeader();
   showStep(1);
 }
 boot();
@@ -54,38 +53,18 @@ function paragraphs(list){
 }
 
 /* ============================================================
-   Rahmen: Header, Footer, Hero, Links
+   Rahmen: Footer, Hero, Links
    ============================================================ */
 function fillChrome(){
   const m = DATA.meta;
   el('heroTitle').textContent = m.hero_titel;
   el('heroImg').src = m.hero_bild;
-  el('hdrLogo').src = m.logo_header;
   el('ftrLogo').src = m.logo_footer;
   setText('ftrCopy', m.footer_copy);
   el('year').textContent = new Date().getFullYear();
   const L = m.links;
-  el('lnkAnleitung').href = L.anleitung;
-  el('lnkFaq').href = L.faq;
-  el('lnkKarte').href = L.karte;
   el('lnkImpressum').href = L.impressum;
   el('lnkDatenschutz').href = L.datenschutz;
-}
-
-function bindHeader(){
-  const burger = document.querySelector('.hdr-burger');
-  const menu = el('menu');
-  burger.addEventListener('click', () => {
-    const open = menu.hidden;
-    menu.hidden = !open;
-    burger.setAttribute('aria-expanded', String(open));
-  });
-  document.addEventListener('click', e => {
-    if(!e.target.closest('.hdr-menu')){
-      menu.hidden = true;
-      burger.setAttribute('aria-expanded', 'false');
-    }
-  });
 }
 
 /* ============================================================
