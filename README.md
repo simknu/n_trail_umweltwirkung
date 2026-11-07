@@ -5,7 +5,6 @@
 - Sämtliche Bilder, die für die Webseite verwendet werden befinden sich im Ordner: images/
 - Die gebaute Webseite (Posten-App) befindet sich im Ordner: website/posten/ —
   `index.html`, `style.css`, `script.js`, `daten.json` (alle Inhalte), `css/` (Schriften), `images/`.
-- `website/posten.zip` ist ein Abbild dieses Ordners zum Hochladen auf den Webserver.
 
 ## Webseite lokal ansehen
 
