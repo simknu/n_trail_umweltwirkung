@@ -60,7 +60,7 @@ li{margin:.35rem 0}
 :focus-visible{outline:3px solid var(--brand);outline-offset:2px}
 
 /* === header (weisser Balken, nur Logo — kein Menü) === */
-.hdr{position:sticky;top:0;z-index:20;display:flex;align-items:center;
+.hdr{display:flex;align-items:center;
   min-height:var(--hdr-h);padding:0 var(--space);background:var(--bg);
   padding-top:env(safe-area-inset-top,0)}
 .hdr-logo img{width:40px;height:40px;display:block;object-fit:contain}
