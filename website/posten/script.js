@@ -53,12 +53,13 @@ function paragraphs(list){
 }
 
 /* ============================================================
-   Rahmen: Footer, Hero, Links
+   Rahmen: Header, Footer, Hero, Links
    ============================================================ */
 function fillChrome(){
   const m = DATA.meta;
   el('heroTitle').textContent = m.hero_titel;
   el('heroImg').src = m.hero_bild;
+  el('hdrLogo').src = m.logo_header;
   el('ftrLogo').src = m.logo_footer;
   setText('ftrCopy', m.footer_copy);
   el('year').textContent = new Date().getFullYear();

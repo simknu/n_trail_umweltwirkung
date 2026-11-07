@@ -28,7 +28,7 @@
   /* derived */
   --cta-hover:#3E5304; --text:#000; --muted:#6B6B6B;  /* --muted nur Icons/Haarlinien, nie Lesetext */
   --bg:#FFFFFF; --surface:#F4F5EF; --border:#E3E3DD; --track:#EFF0EA;
-  --maxw:680px; --radius:6px; --space:1rem;
+  --maxw:680px; --radius:6px; --space:1rem; --hdr-h:56px;
   --thumb:56px; --thumb-gross:min(168px, 45%);  /* Menubild klein / ca. dreifach */
 }
 *{box-sizing:border-box}
@@ -58,6 +58,12 @@ li{margin:.35rem 0}
 
 .container{max-width:var(--maxw);margin:0 auto;padding:0 var(--space)}
 :focus-visible{outline:3px solid var(--brand);outline-offset:2px}
+
+/* === header (weisser Balken, nur Logo — kein Menü) === */
+.hdr{position:sticky;top:0;z-index:20;display:flex;align-items:center;
+  min-height:var(--hdr-h);padding:0 var(--space);background:var(--bg);
+  padding-top:env(safe-area-inset-top,0)}
+.hdr-logo img{width:40px;height:40px;display:block;object-fit:contain}
 
 /* === hero (Haupttitel; kein Scrim, kein grauer Balken) === */
 .hero{position:relative}

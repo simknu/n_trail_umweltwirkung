@@ -10,9 +10,6 @@
     "logo_header": "images/Header_logo.png",
     "logo_footer": "images/Footer_logo.png",
     "links": {
-      "anleitung": "https://n-trail.org/Basel/bs_anleitung.html",
-      "faq": "https://n-trail.org/Basel/bs_faq.html",
-      "karte": "https://n-trail.org/Basel/uebersichtskarte_basel.html",
       "impressum": "https://n-trail.org/Basel/bs_impressum.html",
       "datenschutz": "https://n-trail.org/Basel/bs_datenschutzerklarung.html"
     }
